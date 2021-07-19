@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 
 const Dropdown = props => {
 
-    const [selectedValue, setSelectedValue] = useState('')
 
-    
+    const dropDownChanged = e => {
+        props.changed(e.currentTarget.value)
+    }
+
     return (
-        <form onSubmit={() => {}}>
-            <div>
-                <select value={selectedValue} onChange={e => setSelectedValue(e.target.value)}>
-                    {props.options.map((item, idx) => <option key={idx} value={item.value}>{item.name}</option>)}
-                </select>
-                <p>{selectedValue}</p>
-                <button type="submit">Search</button>
-            </div>
-        </form>
+        <div>
+            <select value={props.selectedValue} onChange={dropDownChanged}>
+                {props.options.map((item, idx) => <option key={idx} value={item.id}>{item.name}</option>)}
+            </select>
+        </div>
     )
 }
 
