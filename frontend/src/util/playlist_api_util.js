@@ -1,5 +1,5 @@
 
-export const fetchPlaylist = () => {
+export const fetchPlaylists = () => {
   return(
     $.ajax({
       method: "GET",
