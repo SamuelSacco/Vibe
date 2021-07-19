@@ -1,7 +1,7 @@
 import * as PlaylistAPIUtil from '../util/playlist_api_util';
 
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS"
-export const RECEIVE_PLAYLIST = "RECEIVE_PLAYISTS"
+export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST"
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST"
 
 
@@ -12,7 +12,7 @@ export const receivePlaylists = (playlists) => {
   })
 }
 
-export const receivePlaylists = (playlist) => {
+export const receivePlaylist = (playlist) => {
   return({
     type: RECEIVE_PLAYLIST, //
     playlist
@@ -47,14 +47,14 @@ export const createPlaylist = playlist => dispatch => {
   )
 }
 
-export const updateplaylist = (playlist) => dispatch => {
+export const updatePlaylist = (playlist) => dispatch => {
   return(
     PlaylistAPIUtil.updatePlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
   )
 }
 
-export const deleteplaylist = (playlistId) => dispatch => {
+export const deletePlaylist = (playlistId) => dispatch => {
   return(
     PlaylistAPIUtil.deletePlaylist(playlistId)
     .then(() => dispatch(removePlaylist(playlistId)))
