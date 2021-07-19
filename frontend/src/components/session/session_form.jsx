@@ -65,47 +65,24 @@ class SessionForm extends React.Component {
       }
       
       
-      const signupNames = () => {
+      const signupFields = () => {
         return(
           <>
             <div className="inputGroup">
               <input 
                 type="text" 
-                placeholder="First name"
-                value={this.state.first_name} 
-                onChange={this.update('first_name')}
+                placeholder="Username"
+                value={this.state.username }
+                onChange={this.update('username')}
                 className="formInput"
                 />
-              <label className="formInputLabel">First name:</label>
-            </div>
-            <br/>
-
-            <div className="inputGroup">
-              <input 
-                type="text" 
-                placeholder="Last name"
-                value={this.state.last_name }
-                onChange={this.update('last_name')}
-                className="formInput"
-                />
-              <label className="formInputLabel">Last name:</label>
+              <label className="formInputLabel">Username</label>
             </div>
             <br/>
           </>
           )
         }
-        
-      const splitRight = () => {
-          return(
-            <>
-              <div className="split right">
-                <p>
 
-                </p>
-              </div>
-          </>
-        )
-      }
 
       return(
           <div className="split left container">
@@ -115,9 +92,8 @@ class SessionForm extends React.Component {
                         ravebrite
                     </Link>
                 </h2>
-                <h1>
-                  {formType} or {navLink}
-                </h1>
+                <br />
+      
                 {this.renderErrors()}
                 <div className="inputGroup">
                     <input 
@@ -131,6 +107,8 @@ class SessionForm extends React.Component {
                 </div>
                 <br/>
 
+                {formType === 'Sign up' ? signupFields() : ''}
+
                 <div className="inputGroup">
                     <input 
                       type="password" 
@@ -142,7 +120,6 @@ class SessionForm extends React.Component {
                     <label className="formInputLabel">Password:</label>
                 </div>
                 <br/>
-                {formType === 'Sign up' ? signupNames() : ''}
                 <input className="formButton" type="submit" value={formType}/>
                 <br />
                 {formType === 'Log in' ? 
@@ -153,7 +130,6 @@ class SessionForm extends React.Component {
                   }
                 
               </form>
-              {splitRight()}
           </div>
       )
     }
