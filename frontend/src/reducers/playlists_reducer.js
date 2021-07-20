@@ -1,7 +1,7 @@
 import { RECEIVE_PLAYLIST, RECEIVE_PLAYLISTS, REMOVE_PLAYLIST } from '../actions/playlist_actions';
 
 
-const playlistsReducer = (oldState={}, action) => {
+const playlistsReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   let newState;
 
@@ -14,7 +14,6 @@ const playlistsReducer = (oldState={}, action) => {
       newState = Object.assign({}, oldState)
       delete newState[action.playlistId]
       return newState
-      
     default: 
       return oldState
   }
