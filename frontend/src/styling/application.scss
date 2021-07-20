@@ -1,0 +1,9 @@
+@import 'reset.css';
+@import 'session_form.scss';
+
+html, body, #root, .splash-wrapper {
+    /* line-height: 1.15;  */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    height: 100%;
+    width: 100%;
+  }
