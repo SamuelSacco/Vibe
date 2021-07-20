@@ -27,7 +27,7 @@ export const receiveErrors = errors => {
 
 
 export const requestUser = userId => dispatch => {
-  return UserAPIUtil.requestUser(userId).then(res => (
+  return UserAPIUtil.getUser(userId).then(res => (
     dispatch(receiveUser(res))
   ), err => (
     dispatch(receiveErrors(err.status))
@@ -35,10 +35,10 @@ export const requestUser = userId => dispatch => {
 };
 
 
-export const requestUsers = () => dispatch => {
-  return UserAPIUtil.requestUsers().then(res => (
-    dispatch(receiveUsers(res))
-  ), err => (
-    dispatch(receiveErrors(err.status))
-  ))
-};
+// export const requestUsers = () => dispatch => {
+//   return UserAPIUtil.requestUsers().then(res => (
+//     dispatch(receiveUsers(res))
+//   ), err => (
+//     dispatch(receiveErrors(err.status))
+//   ))
+// };

@@ -30,38 +30,38 @@ export const removePlaylist = (playlistId) => {
 
 export const requestPlaylists = () => dispatch => {
   return(
-    PlaylistAPIUtil.fetchPlaylists()
+    PlaylistAPIUtil.getPlaylists()
     .then(playlists => dispatch(receivePlaylists(playlists)))
   )
 }
   
-export const requestPlaylist = (playlistId) => dispatch => {
-  return(
-    PlaylistAPIUtil.fetchPlaylist(playlistId)
-    .then(playlist => dispatch(receivePlaylist(playlist)))
-  )
-}
+// export const requestPlaylist = (playlistId) => dispatch => {
+//   return(
+//     PlaylistAPIUtil.fetchPlaylist(playlistId)
+//     .then(playlist => dispatch(receivePlaylist(playlist)))
+//   )
+// }
       
-export const createPlaylist = playlist => dispatch => {
-  return(
-    PlaylistAPIUtil.createPlaylist(playlist)
-    .then(playlist => dispatch(receivePlaylist(playlist)))
-  )
-}
+// export const createPlaylist = playlist => dispatch => {
+//   return(
+//     PlaylistAPIUtil.createPlaylist(playlist)
+//     .then(playlist => dispatch(receivePlaylist(playlist)))
+//   )
+// }
 
-export const updatePlaylist = (playlist) => dispatch => {
-  return(
-    PlaylistAPIUtil.updatePlaylist(playlist)
-    .then(playlist => dispatch(receivePlaylist(playlist)))
-  )
-}
+// export const updatePlaylist = (playlist) => dispatch => {
+//   return(
+//     PlaylistAPIUtil.updatePlaylist(playlist)
+//     .then(playlist => dispatch(receivePlaylist(playlist)))
+//   )
+// }
 
-export const deletePlaylist = (playlistId) => dispatch => {
-  return(
-    PlaylistAPIUtil.deletePlaylist(playlistId)
-    .then(() => dispatch(removePlaylist(playlistId)))
-  )
-}
+// export const deletePlaylist = (playlistId) => dispatch => {
+//   return(
+//     PlaylistAPIUtil.deletePlaylist(playlistId)
+//     .then(() => dispatch(removePlaylist(playlistId)))
+//   )
+// }
 
 
 //  Below will need to be used if we don't have a separate User lookup functionality.  Obv replace with Playlists...

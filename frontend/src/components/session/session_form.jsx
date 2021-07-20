@@ -40,17 +40,17 @@ class SessionForm extends React.Component {
         
     }
 
-    renderErrors() {
-        return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
-      }
+    // renderErrors() {
+    //     return(
+    //       <ul>
+    //         {this.props.errors.map((error, i) => (
+    //           <li key={`error-${i}`}>
+    //             {error}
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     );
+    //   }
 
     componentWillUnmount() {
       
@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
                 </h2>
                 <br />
       
-                {this.renderErrors()}
+                {/* {this.renderErrors()} */}
                 <div className="inputGroup">
                     <input 
                       type="text" 
