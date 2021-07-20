@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const Playlist = require('../../models/Playlist');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the playlists route" }));
 
-const Playlist = require('../../models/Playlist');
 // const validateTweetInput = require('../../validation/playlists');
 
 router.get('/', (req, res) => {
@@ -34,21 +34,28 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
-    passport.authenticate('jwt', { session: false }),
+    // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      const { errors, isValid } = validatePlaylistInput(req.body);
+      // const { errors, isValid } = validatePlaylistInput(req.body);
         
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
+      // if (!isValid) {
+      //   return res.status(400).json(errors);
+      // }
   
-      const newPlaylist = new Playlist({
-        text: req.body.text,
-        user: req.user.id
-      });
-  
-      newPlaylist.save().then(playlist => res.json(playlist));
+      // const newPlaylist = new Playlist({
+      //   songs: req.body.songs // revisit
+      // });
+      
+      // newPlaylist.save( (err, result) => {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     console.log(result);
+      //   }
+      // })
+      console.log(req.body)
     }
-  );
+    
+);
 
 module.exports = router;
