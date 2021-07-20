@@ -1,5 +1,5 @@
 
-export const fetchPlaylist = () => {
+export const fetchPlaylists = () => {
   return(
     $.ajax({
       method: "GET",
@@ -29,7 +29,7 @@ export const createPlaylist = playlist => {
 export const updatePlaylist = (playlist) => {
   const test = playlist.id
   delete playlist.id
-  return(
+  return( 
     $.ajax({
       method: "PATCH",
       url: `api/playlists/${test}`, 
