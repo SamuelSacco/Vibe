@@ -1,4 +1,5 @@
 import React from "react";
+import SongItem from "./songItem";
 
 const Listbox = props => {
 
@@ -8,14 +9,19 @@ const Listbox = props => {
 
   return (
     <div>
-      {
-        props.items.map((item, idx) => 
-        <button key={idx}
-          onClick={clicked}
-          id={item.track.id}>
-              {item.track.name}
-        </button>)
-      }
+      {/* {console.log(props.items)} */}
+      <div>
+        {
+          props.items.map((item, idx) => 
+          <SongItem 
+            key={idx}
+            onClick={clicked}
+            id={item.track.id}
+            name={item.track.name} 
+            preview={item.track.preview_url}
+          />)
+        }
+      </div>
     </div>
   );
 };
