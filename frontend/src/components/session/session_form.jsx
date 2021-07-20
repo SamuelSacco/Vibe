@@ -40,17 +40,17 @@ class SessionForm extends React.Component {
         
     }
 
-    renderErrors() {
-        return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
-      }
+    // renderErrors() {
+    //     return(
+    //       <ul>
+    //         {this.props.errors.map((error, i) => (
+    //           <li key={`error-${i}`}>
+    //             {error}
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     );
+    //   }
 
     componentWillUnmount() {
       
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
 
       const demoUser = {
         email: "demo@user.com",
-        password: "demouser"
+        password: "123456"
       }
       
       
@@ -74,61 +74,86 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 value={this.state.username }
                 onChange={this.update('username')}
-                className="formInput"
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Username"}
                 />
-              <label className="formInputLabel">Username</label>
             </div>
             <br/>
           </>
           )
         }
 
+      const signupPassword = () => {
+        return(
+          <>
+            <div className="inputGroup">
+              <input 
+                type="password" 
+                placeholder="Confirm password"
+                value={this.state.password2 }
+                onChange={this.update('password2')}
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Confirm password"}
+                />
+            </div>
+            <br/>
+          </>
+        )
+      }
+
 
       return(
-          <div className="split left container">
-              <form onSubmit={this.handleSubmit} className={"centered"}>
-                <h2>
-                    <Link to='/' className="signin-logo" >
-                        ravebrite
-                    </Link>
+          <div className="splash-container">
+              <form onSubmit={this.handleSubmit} className="session-form">
+                <h2 className='logo'>
+                    (( vibe ))
                 </h2>
                 <br />
       
-                {this.renderErrors()}
-                <div className="inputGroup">
+                {formType === 'Sign up' ? signupFields() : ''}
+                {/* {this.renderErrors()} */}
+                <div className="form-input">
                     <input 
                       type="text" 
                       placeholder="Email"
                       value={this.state.email} 
                       onChange={this.update('email')}
-                      className="formInput"
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Email"}
                     />
-                    <label className="formInputLabel">Email:</label>
                 </div>
                 <br/>
 
-                {formType === 'Sign up' ? signupFields() : ''}
 
-                <div className="inputGroup">
+                <div className="form-input">
                     <input 
                       type="password" 
                       placeholder="Password"
                       value={this.state.password} 
                       onChange={this.update('password')}
-                      className="formInput"
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Password"}
                     />
-                    <label className="formInputLabel">Password:</label>
                 </div>
                 <br/>
+                
+                {formType === 'Sign up' ? signupPassword() : ''}
+
                 <input className="formButton" type="submit" value={formType}/>
                 <br />
                 {formType === 'Log in' ? 
-                  <button 
-                    onClick={this.demoUserSignin(demoUser)}
-                    className="inputGroup formButton"  
-                  >Demo User</button> : ''
+                  <>
+                    <button 
+                      onClick={this.demoUserSignin(demoUser)}
+                      className="inputGroup formButton"  
+                      >Demo User
+                    </button> 
+                    <br />
+                  </>
+                    : ''
                   }
                 
+                Already a user? {this.props.navLink}
               </form>
           </div>
       )

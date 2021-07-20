@@ -2,10 +2,31 @@
 
 import axios from 'axios';
 
+// export const createPlaylist = (playlist) => {
+//   return axios.post(`/api/playlists`)
+// }
+
 export const getPlaylists = () => {
   return axios.get('/api/playlists')
 };
 
-export const getUserPlaylists = id => {
-  return axios.get(`/api/tweets/user/${id}`)
+export const postPlaylist = (playlist) => {
+  return axios.post('/api/playlists', playlist)
 };
+
+
+export const getUserPlaylists = id => {
+
+  return axios.get(`/api/playlists/user/${id}`)
+};
+
+// export const del
+
+// OR
+
+// export const getPlaylist = playlistId => {
+//   return axios.get(`/api/playlists/${playlistId}`)
+// };
+
+//and then have some sort of association tying the playlist to the user...
+
