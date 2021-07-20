@@ -26,13 +26,13 @@ export const receiveErrors = errors => {
 };
 
 
-export const requestUser = userId => dispatch => {
-  return UserAPIUtil.getUser(userId).then(res => (
-    dispatch(receiveUser(res))
-  ), err => (
-    dispatch(receiveErrors(err.status))
-  ))
-};
+// export const requestUser = userId => dispatch => {
+//   return UserAPIUtil.getUser(userId).then(res => (
+//     dispatch(receiveUser(res))
+//   ), err => (
+//     dispatch(receiveErrors(err.status))
+//   ))
+// };
 
 
 // export const requestUsers = () => dispatch => {
