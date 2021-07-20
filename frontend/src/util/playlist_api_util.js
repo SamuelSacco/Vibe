@@ -7,5 +7,6 @@ export const getPlaylists = () => {
 };
 
 export const getUserPlaylists = id => {
-  return axios.get(`/api/tweets/user/${id}`)
+
+  return axios.get(`/api/playlists/user/${id}`)
 };
