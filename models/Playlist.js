@@ -10,7 +10,7 @@ const PlaylistSchema = new Schema({
     title: {
       type: String,
       required: true
-    }, 
+    },
     artist: {
       type: String,
       require: true
