@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Dropdown from './dropdown';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Listbox from './listbox';
 import TestMap from './test_map';
 
-function App() {
+function PlaylistGenerator() {
   
   const clientId = '79eb0fab585d4f86bcfba8abde304372'
   const secretId = 'b704db72f82c45cd83aff68ad527d664'
@@ -139,4 +139,4 @@ function App() {
   );
 }
 
-// export default App;
+export default PlaylistGenerator;
