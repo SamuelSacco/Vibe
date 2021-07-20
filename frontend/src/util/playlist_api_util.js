@@ -6,6 +6,17 @@ export const getPlaylists = () => {
   return axios.get('/api/playlists')
 };
 
+
 export const getUserPlaylists = id => {
-  return axios.get(`/api/tweets/user/${id}`)
+
+  return axios.get(`/api/playlists/user/${id}`)
 };
+
+// OR
+
+// export const getPlaylist = playlistId => {
+//   return axios.get(`/api/playlists/${playlistId}`)
+// };
+
+//and then have some sort of association tying the playlist to the user...
+
