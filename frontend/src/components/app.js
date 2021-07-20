@@ -9,7 +9,6 @@ import SignupFormContainer from './session/signup_form_container';
 
 const App = () => (
   <div>
-    hewwo
     {/* <NavBarContainer /> */}
     <Switch>
         <Route exact path="/" />

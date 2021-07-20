@@ -7,6 +7,8 @@ import {
   HashRouter
 } from 'react-router-dom'; 
 // import { login } from '../../actions/session_actions';
+import '../../styling/reset.css'
+import '../../styling/session_form.scss'
 
 
 class SessionForm extends React.Component {
@@ -74,52 +76,63 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 value={this.state.username }
                 onChange={this.update('username')}
-                className="formInput"
                 />
-              <label className="formInputLabel">Username</label>
             </div>
             <br/>
           </>
           )
         }
 
+      const signupPassword = () => {
+        return(
+          <>
+            <div className="inputGroup">
+              <input 
+                type="password" 
+                placeholder="Confirm password"
+                value={this.state.password2 }
+                onChange={this.update('password2')}
+                />
+            </div>
+            <br/>
+          </>
+        )
+      }
+
 
       return(
-          <div className="split left container">
-              <form onSubmit={this.handleSubmit} className={"centered"}>
-                <h2>
-                    <Link to='/' className="signin-logo" >
-                        ravebrite
-                    </Link>
+          <div className="splash-container">
+              <form onSubmit={this.handleSubmit} className="session-form">
+                <h2 className='logo'>
+                    (( vibe ))
                 </h2>
                 <br />
       
+                {formType === 'Sign up' ? signupFields() : ''}
                 {/* {this.renderErrors()} */}
-                <div className="inputGroup">
+                <div className="form-input">
                     <input 
                       type="text" 
                       placeholder="Email"
                       value={this.state.email} 
                       onChange={this.update('email')}
-                      className="formInput"
                     />
-                    <label className="formInputLabel">Email:</label>
                 </div>
                 <br/>
 
-                {formType === 'Sign up' ? signupFields() : ''}
 
-                <div className="inputGroup">
+                <div className="form-input">
                     <input 
                       type="password" 
                       placeholder="Password"
                       value={this.state.password} 
                       onChange={this.update('password')}
-                      className="formInput"
                     />
-                    <label className="formInputLabel">Password:</label>
                 </div>
                 <br/>
+
+                {formType === 'Sign up' ? signupPassword() : ''}
+
                 <input className="formButton" type="submit" value={formType}/>
                 <br />
                 {formType === 'Log in' ? 
@@ -129,7 +142,9 @@ class SessionForm extends React.Component {
                   >Demo User</button> : ''
                   }
                 
+                Already a user? {this.props.navLink}
               </form>
+              <br />
           </div>
       )
     }

@@ -1,0 +1,127 @@
+.splash-container {
+    height: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(-45deg,  #19aee4, #C687E9, #f86c6c, #F9EC1F);
+	background-size: 200% 200%;
+	animation: gradient 8s ease infinite;
+    font-family: Gilroy-Light;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    font-family: Gilroy-ExtraBold;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.session-form{
+    animation: form-load 3s ease-in-out;
+}
+
+.form-input {
+    width: 325px;
+}
+
+input[type=text], input[type=password] {
+    width: 320px;
+    padding: 15px;
+    // padding-top: 30px;
+    // margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(170, 169, 169);
+    border-radius: 2px;
+}
+
+input {
+    text-align: center;
+    width: 60px;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+// make placeholder disappear on focus
+
+// input:placeholder-shown {
+//     text-align: left;
+// }
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+}
+
+form {
+    margin-bottom: 25px;
+    
+}
+
+.formButton {
+    // background-color: #FAA763 ;
+    background-color: #cfcfcf;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.formButton:hover {
+    opacity:1;
+}
+
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.inputGroup{
+    position: relative;
+    min-height: 3.5em;
+}
+
+.formInputLabel{
+    position: absolute;
+    font-size: .8em;
+    top: 10px;
+    left: 15px;
+    text-transform: uppercase;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes form-load {
+    from {bottom:0px; opacity: 0;}
+    to {bottom:200px; opacity: 1;}
+}
+
+@font-face{
+    font-family: Gilroy-ExtraBold;
+    src: url("Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face{
+    font-family: Gilroy-Light;
+    src: url("Gilroy-Light.otf") format("opentype");
+}
