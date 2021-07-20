@@ -1,58 +1,77 @@
-.splash-container {
-    height: 1500px;
+.splash-wrapper{
     display: flex;
+    width: 100%;
+    // height: 100%;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.splash-container {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(-45deg,  #19aee4, #C687E9, #f86c6c, #F9EC1F);
 	background-size: 200% 200%;
 	animation: gradient 8s ease infinite;
     font-family: Gilroy-Light;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.session-form{
+    position: relative;
+    animation: form-load 2.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
     display: flex;
     justify-content: center;
+    align-content: center;
     font-family: Gilroy-ExtraBold;
     color: white;
     letter-spacing: 5px;
+    margin-left: 10px;
 }
 
-.session-form{
-    animation: form-load 3s ease-in-out;
-}
 
 .form-input {
-    width: 325px;
+    // width: 325px;
 }
 
 input[type=text], input[type=password] {
     width: 320px;
     padding: 15px;
-    // padding-top: 30px;
-    // margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(170, 169, 169);
-    border-radius: 2px;
+    // border-style: solid;
+    // border-width: 1px;
+    // border-color: rgb(170, 169, 169);
+    border-radius: 5px;
 }
 
 input {
     text-align: center;
     width: 60px;
+    border: none;
+    border-radius: 5px;
 }
 
 ::placeholder {
     text-align: center;
 }
 
-// make placeholder disappear on focus
+/* make placeholder disappear on focus */
 
-// input:placeholder-shown {
-//     text-align: left;
-// }
+/* input:placeholder-shown {
+    text-align: left;
+} */
 
 input[type=text]:focus, input[type=password]:focus {
     outline: none;
@@ -64,14 +83,14 @@ form {
 }
 
 .formButton {
-    // background-color: #FAA763 ;
+    /* // background-color: #FAA763 ; */
     background-color: #cfcfcf;
     color: white;
     padding: 16px 20px;
-    margin: 8px 0;
+    // margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 350px;
     opacity: 0.9;
     border-radius: 5px;
 }
@@ -88,7 +107,6 @@ form {
 
 .inputGroup{
     position: relative;
-    min-height: 3.5em;
 }
 
 .formInputLabel{
@@ -112,8 +130,8 @@ form {
 }
 
 @keyframes form-load {
-    from {bottom:0px; opacity: 0;}
-    to {bottom:200px; opacity: 1;}
+    from {bottom:-200px; opacity: 0;}
+    to {bottom:0px; opacity: 1;}
 }
 
 @font-face{

@@ -7,8 +7,6 @@ import {
   HashRouter
 } from 'react-router-dom'; 
 // import { login } from '../../actions/session_actions';
-import '../../styling/reset.css'
-import '../../styling/session_form.scss'
 
 
 class SessionForm extends React.Component {
@@ -63,7 +61,7 @@ class SessionForm extends React.Component {
 
       const demoUser = {
         email: "demo@user.com",
-        password: "demouser"
+        password: "123456"
       }
       
       
@@ -76,6 +74,8 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 value={this.state.username }
                 onChange={this.update('username')}
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Username"}
                 />
             </div>
             <br/>
@@ -92,6 +92,8 @@ class SessionForm extends React.Component {
                 placeholder="Confirm password"
                 value={this.state.password2 }
                 onChange={this.update('password2')}
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Confirm password"}
                 />
             </div>
             <br/>
@@ -116,6 +118,8 @@ class SessionForm extends React.Component {
                       placeholder="Email"
                       value={this.state.email} 
                       onChange={this.update('email')}
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Email"}
                     />
                 </div>
                 <br/>
@@ -127,24 +131,30 @@ class SessionForm extends React.Component {
                       placeholder="Password"
                       value={this.state.password} 
                       onChange={this.update('password')}
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Password"}
                     />
                 </div>
                 <br/>
-
+                
                 {formType === 'Sign up' ? signupPassword() : ''}
 
                 <input className="formButton" type="submit" value={formType}/>
                 <br />
                 {formType === 'Log in' ? 
-                  <button 
-                    onClick={this.demoUserSignin(demoUser)}
-                    className="inputGroup formButton"  
-                  >Demo User</button> : ''
+                  <>
+                    <button 
+                      onClick={this.demoUserSignin(demoUser)}
+                      className="inputGroup formButton"  
+                      >Demo User
+                    </button> 
+                    <br />
+                  </>
+                    : ''
                   }
                 
                 Already a user? {this.props.navLink}
               </form>
-              <br />
           </div>
       )
     }
