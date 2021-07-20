@@ -10,6 +10,10 @@ export const getPlaylists = () => {
   return axios.get('/api/playlists')
 };
 
+export const postPlaylist = (playlist) => {
+  return axios.post('/api/playlists', playlist)
+};
+
 
 export const getUserPlaylists = id => {
 
