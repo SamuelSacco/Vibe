@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 export const getUsers = () => {
@@ -11,4 +10,3 @@ export const getUser = (userId) => {
 
 
 // written above is if we want Users  
-
