@@ -1,48 +1,12 @@
 
-export const fetchPlaylists = () => {
-  return(
-    $.ajax({
-      method: "GET",
-      url: `api/playlists`
-    })
-    )
-}
-  
-export const fetchPlaylist = (playlistId) => {
-  return(
-    $.ajax({
-      method: "GET",
-      url: `api/playlists/${playlistId}`
-    })
-    )
-}
-    
-export const createPlaylist = playlist => {
-  return(
-    $.ajax({
-      method: "POST", 
-      url: `api/playlists`, 
-      data: {playlist}
-    })
-  )
-}
-export const updatePlaylist = (playlist) => {
-  const test = playlist.id
-  delete playlist.id
-  return(
-    $.ajax({
-      method: "PATCH",
-      url: `api/playlists/${test}`, 
-      data: {playlist}
-    })
-  )
-}
+// Below is if we don't write individual actions/axios requests for Users and just get user's playlists through looking up playlists  
 
-export const deletePlaylist = (playlistId) => {
-  return(
-    $.ajax({
-      method: "DELETE",
-      url: `api/playlists/${playlistId}`
-    })
-  )
-}
+import axios from 'axios';
+
+export const getPlaylists = () => {
+  return axios.get('/api/playlists')
+};
+
+export const getUserPlaylists = id => {
+  return axios.get(`/api/tweets/user/${id}`)
+};
