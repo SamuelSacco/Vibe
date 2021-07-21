@@ -42,7 +42,7 @@ export default function Quiz () {
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
-	const [score] = useState(0);
+	const [score] = useState(0); // find way to make score persist to state/store upon completion
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		// if (isCorrect) {
@@ -57,7 +57,8 @@ export default function Quiz () {
 		}
 	};
 	return (
-		<div className='app'>
+		<div className='quiz-wrapper'>
+			<div className='quiz'>
 			{showScore ? (
 				<div className='score-section'>
 					You scored {score} out of {questions.length}
@@ -70,13 +71,19 @@ export default function Quiz () {
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
-					<div className='answer-section'>
+					<div className='quiz-question'>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							<button 
+								onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
+								className='quiz-answer'
+							>
+								{answerOption.answerText}
+							</button>
 						))}
 					</div>
 				</>
 			)}
+			</div>
 		</div>
 	);
 }
