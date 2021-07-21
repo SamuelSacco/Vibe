@@ -5,23 +5,15 @@ const NavBar = ({ currentUser, logout }) => {
 
   console.log(currentUser);
   return (
-    <nav>
-      <div>
-        <Link to="/">
-          VIBE
-        </Link>
-      </div>
+    <nav className='navbar'>
       {
         currentUser ? (
-                        <>
                           <div>
-                            <div>
-                              {currentUser.id}
-                              <Link to="/" onClick={logout}>Log out</Link>
-                              <Link to={`/user/${currentUser.id}`}>Playlist</Link>
-                            </div>
+                            {currentUser.id}
+                            <Link to="/" onClick={logout}>Log out</Link>
+                            <br />
+                            <Link to={`/user/${currentUser.id}`}>Playlist</Link>
                           </div>
-                        </>
                       ) 
                     :   
                       (

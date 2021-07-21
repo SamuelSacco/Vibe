@@ -1,21 +1,9 @@
-.splash-wrapper{
-    display: flex;
-    width: 100%;
-    // height: 100%;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
 .splash-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg,  #19aee4, #C687E9, #f86c6c, #F9EC1F);
-	background-size: 200% 200%;
-	animation: gradient 8s ease infinite;
-    font-family: Gilroy-Light;
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -38,11 +26,6 @@
     color: white;
     letter-spacing: 5px;
     margin-left: 10px;
-}
-
-
-.form-input {
-    // width: 325px;
 }
 
 input[type=text], input[type=password] {
