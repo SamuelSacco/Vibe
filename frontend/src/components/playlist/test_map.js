@@ -1,4 +1,5 @@
 import React from 'react'
+import { createPlaylist } from '../../actions/playlist_actions'
 
 const TestMap = (props) => {
     console.log(props.playlist)
@@ -13,13 +14,11 @@ const TestMap = (props) => {
     })
     
     console.log("test", newArray)
-
     return (
         <div>
-            <button>Save Playlist</button>
+            <button onClick={() => createPlaylist(newArray)}>Save Playlist</button>
         </div>
     )
 }
-
 
 export default TestMap;

@@ -7,6 +7,8 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const playlists = require("./routes/api/playlists");
 
+const Playlist = require("./models/Playlist");
+
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
@@ -20,6 +22,32 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //testing
+
+// const newPlaylist = new Playlist({
+//   user: "60f715139cb7d0102155256b",
+//   songs: [
+//     {
+//       title: "holy",
+//       artist: "justin",
+//       preview: "sdf",
+//       image: "sdf"
+//     },
+//     {
+//       title: "saved by you",
+//       artist: "justin",
+//       preview: "sd",
+//       image: "sd"
+//     }
+//   ]
+// });
+
+// newPlaylist.save( (err, res) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(res);
+//   }
+// });
 
 // end testing
 
