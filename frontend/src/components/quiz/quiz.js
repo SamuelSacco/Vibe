@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { fetchMood } from '../../actions/quiz_actions';
 
-export default function Quiz () {
+export default function Quiz (props) {
+	
 	const questions = [
 		{
 			questionText: 'What do you like to do when you\'re happy?',
@@ -40,20 +42,27 @@ export default function Quiz () {
 		},
 	];
 
+	
+	
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
-	const [score] = useState(0); // find way to make score persist to state/store upon completion
+	const [score, setScore] = useState(0); // find way to make score persist to state/store upon
 
+	const handleSubmit = (score) => {
+		props.processForm(score)
+	}
+	
 	const handleAnswerOptionClick = (isCorrect) => {
-		// if (isCorrect) {
-		// 	setScore(score + 1);
-		// }
-
+		if (isCorrect) {
+			setScore(score + 1);
+		}
+			
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
-			setShowScore(true);
+			setShowScore(true)
+			// handleSubmit(score);
 		}
 	};
 	return (
