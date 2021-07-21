@@ -42,6 +42,7 @@ function PlaylistGenerator(props) {
         setGenres({
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
+          //.filter((el) => el.name.includes(props.MOOD))***************
         })
       })
     })
@@ -58,10 +59,11 @@ function PlaylistGenerator(props) {
         'Authorization': 'Bearer ' + token
       }
     }).then(playlistResponse => {
-      // console.log(playlistResponse)
+      console.log(playlistResponse)
       setPlaylist({
         selectedPlaylist: playlist.selectedPlaylist,
         listOfPlaylistsFromAPI: playlistResponse.data.playlists.items
+        // playlistUrl: playlistResponse.dada.playlists
       })
     })
 
@@ -118,6 +120,10 @@ function PlaylistGenerator(props) {
           </button>
           <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/>
         </div>
+      <body>
+        {playlist.selectedPlaylist ? <iframe src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        : null}
+      </body>
         {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUserId} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist}/> : null}
         {/* {console.log(songs.listOfSongsFromAPI)} */}
       </form>

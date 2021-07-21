@@ -5,6 +5,7 @@ import PlaylistGenerator from './playlist_generator';
 const mSTP = (state) => {
     return ({
         currentUserId: state.session.user.id,
+        //MOOD: state.entities.mood
     })
 }
 

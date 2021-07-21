@@ -8,5 +8,4 @@ export const getUser = (userId) => {
   return axios.get(`/api/users/${userId}`)
 };
 
-
 // written above is if we want Users  
