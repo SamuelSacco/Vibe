@@ -1,6 +1,7 @@
 @import 'reset.css';
 @import 'session_form.scss';
 @import 'quiz.scss';
+@import 'navbar.scss';
 
 html, body, #root, .splash-wrapper {
     /* line-height: 1.15;  */
@@ -8,3 +9,31 @@ html, body, #root, .splash-wrapper {
     height: 100%;
     width: 100%;
   }
+
+.splash-wrapper{
+  display: flex;
+  width: 100%;
+  // height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  background: linear-gradient(-45deg,  #19aee4, #C687E9, #f86c6c, #F9EC1F);
+	background-size: 200% 200%;
+	animation: gradient 8s ease infinite;
+  font-family: Gilroy-Light;
+}
+
+.app{
+    position: relative;
+    min-height: 100vh; 
+}
+
+.splash {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: form-load 2.25s ease-in-out;
+}
