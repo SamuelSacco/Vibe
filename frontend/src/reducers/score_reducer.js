@@ -1,16 +1,16 @@
 import { RECEIVE_VIBE } from "../actions/quiz_actions";
 
-const scoreReducer = (oldState = {}, action) => {
+const vibeReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
   switch(action.type) {
     case RECEIVE_VIBE:
-      return Object.assign({}, oldState, { score: action.score, mood: action.mood });
+      return Object.assign({}, oldState, { score: action.vibe.score, mood: action.vibe.mood });
     default:
       return oldState;
   }
 };
 
-export default scoreReducer;
+export default vibeReducer;
 
