@@ -30,7 +30,7 @@ export function Quiz (props) {
 			],
 		},
 		{
-			questionText: 'What do you like to do when you\'re angry?',
+			questionText: 'What do you like to do when you\'re bored?',
 			answerOptions: [
 				{ answerText: 'Start a fight club with Ali.', points: 1 },
 				{ answerText: 'Challenge Eric to a rap battle.', points: 2},
@@ -39,12 +39,12 @@ export function Quiz (props) {
 			],
 		},
 		{
-			questionText: 'Are we still taking this quiz?',
+			questionText: 'How are you feeling right now?',
 			answerOptions: [
-				{ answerText: 'Yeah, but I wanna hit the beach with Chen.', points: 1},
-				{ answerText: 'Yeah, but I wanna hit the open pastures with Ernst.', points: 2},
-				{ answerText: 'Yeah, but I wanna hit the slopes with Lee-Anne.', points: 3},
-				{ answerText: 'Yeah, but I wanna hit the town with Donnie.', points: 4 },
+				{ answerText: 'Not gonna lie, I\'m feeling low right now', mood: 'sad'},
+				{ answerText: 'I\'m on top of the world', mood: 'happy'},
+				{ answerText: 'Would much rather be doing something else, to be honest', mood: 'bored'},
+				{ answerText: 'I\'m feeling lucky', mood: 'lucky'},
 			],
 		},
 	];
@@ -54,6 +54,7 @@ export function Quiz (props) {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0); // find way to make score persist to state/store upon
+	const [vibe, setVibe] = useState('');
 	
 	const handleAnswerOptionClick = (points) => {
 		setScore(score + points);
