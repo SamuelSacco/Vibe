@@ -2,6 +2,7 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import '../styling/application.scss'
+import PlaylistGenerator from './playlist/playlist_generator';
 // import NavBarContainer from './nav/navbar_container';
 
 // import MainPage from './main/main_page';
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/" />
         <Route exact path="/login" component={LoginFormContainer} />
         <Route exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/playlists" component={PlaylistGenerator} />
     </Switch>
   </div>
 );
