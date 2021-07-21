@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchPlaylists = (userId) => (
-  axios.get(`/api/playlists/`, userId)
+  axios.get(`/api/playlists/${userId}`)
 )
 
 export const createPlaylist = (playlist) => {

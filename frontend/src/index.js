@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-import axios from "axios"
+import {fetchPlaylists} from "./util/playlist_api_util"
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
 
   // testing
-  window.axios = axios;
+  window.fetchPlaylists = fetchPlaylists;
   //end testing
 
   ReactDOM.render(<Root store={store} />, root);

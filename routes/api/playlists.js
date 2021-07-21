@@ -26,8 +26,8 @@ const Playlist = require('../../models/Playlist');
 // });
 
 // get playlists for a user
-router.get('/', (req, res) => {
-    Playlist.find({ userId: req.params.userId })
+router.get('/:user_id', (req, res) => {
+    Playlist.find({ userId: req.params.user_id })
         .then(playlist => res.json(playlist))
         .catch(err =>
             res.status(404).json({ noplaylistfound: 'No playlist found with that ID' })
