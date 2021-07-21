@@ -7,6 +7,7 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const playlists = require("./routes/api/playlists");
 
+const User = require("./models/User")
 const Playlist = require("./models/Playlist");
 
 mongoose
@@ -22,6 +23,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //testing
+
+// Playlist.find( {userId: "60f7575c9f7102e0c0723220"}, (err, res) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(res);
+//   }
+// });
 
 // const newPlaylist = new Playlist({
 //   userId: "60f715139cb7d0102155256b",
