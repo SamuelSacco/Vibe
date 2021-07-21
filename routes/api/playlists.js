@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const Playlist = require('../../models/Playlist');
 
-// router.get("/test", (req, res) => res.json({ msg: "This is the playlists route" }));
-
 // const validateTweetInput = require('../../validation/playlists');
 
 // router.get('/', (req, res) => {
