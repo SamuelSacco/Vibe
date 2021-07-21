@@ -115,16 +115,22 @@ function PlaylistGenerator(props) {
         <div className="container">
           <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre"/>
           <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist"/>
-          <button type="submit">
+          <body>
+            {
+              playlist.selectedPlaylist ? 
+              <div>
+                <iframe title="playlist-widget" src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} />
+              </div>
+            : null
+            }
+          </body>
+          {/* <button type="submit">
             Search
-          </button>
-          <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/>
+          </button> */}
+          {/* <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/> */}
         </div>
-      <body>
-        {playlist.selectedPlaylist ? <iframe title="playlist-widget" src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        : null}
-      </body>
-        {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUserId} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} /> : null}
+        {/* {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} /> : null} */}
         {/* {console.log(songs.listOfSongsFromAPI)} */}
       </form>
       {/* <header className="App-header">

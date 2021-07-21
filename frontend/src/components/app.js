@@ -13,18 +13,18 @@ import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
 
 const App = () => (
-  <div className="splash-wrapper">
-    <header>
+  <div>
       <NavBarContainer />
-    </header>
-    <Switch>
-        <Route exact path="/" />
-        <Route exact path="/quiz" component={Quiz}/>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route exact path="/playlists" component={PlaylistGeneratorContainer} />
-        <ProtectedRoute exact path="/user/:userId" component={UserShowContainer} />
-    </Switch>
+    <div className="splash-wrapper">
+      <Switch>
+          <Route exact path="/" />
+          <Route exact path="/quiz" component={Quiz}/>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <Route exact path="/playlists" component={PlaylistGeneratorContainer} />
+          <ProtectedRoute exact path="/user/:userId" component={UserShowContainer} />
+      </Switch>
+    </div>
   </div>
 );
 

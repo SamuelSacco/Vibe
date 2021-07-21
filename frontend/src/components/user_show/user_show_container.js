@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
+import { requestPlaylists } from '../../actions/playlist_actions';
 import UserShow from './user_show';
 
 const mSTP = (state, ownProps) => {
-  // debugger  
-  return ({
+    return ({
         userId: ownProps.match.params.userId,
+        playlists: state.entities.playlists
     })
 }
 
 const mDTP = (dispatch) => {
-    // return ({
-    //     createPlaylist: playlist => dispatch(createPlaylist(playlist))
-    // })
+    return ({
+        requestPlaylists: userId => dispatch(requestPlaylists(userId))
+    })
 }
 
-export default connect(mSTP, null)(UserShow)
+export default connect(mSTP, mDTP)(UserShow)
