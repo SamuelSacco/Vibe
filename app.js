@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 //testing
 
 // const newPlaylist = new Playlist({
-//   user: "60f715139cb7d0102155256b",
+//   userId: "60f715139cb7d0102155256b",
 //   songs: [
 //     {
 //       title: "holy",
@@ -37,8 +37,8 @@ app.use(bodyParser.json());
 //       artist: "justin",
 //       preview: "sd",
 //       image: "sd"
-//     }
-//   ]
+//     }],
+//   test: "hello"
 // });
 
 // newPlaylist.save( (err, res) => {

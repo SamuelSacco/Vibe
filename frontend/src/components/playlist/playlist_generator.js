@@ -121,10 +121,10 @@ function PlaylistGenerator(props) {
           <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/>
         </div>
       <body>
-        {playlist.selectedPlaylist ? <iframe src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        {playlist.selectedPlaylist ? <iframe title="playlist-widget" src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         : null}
       </body>
-        {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUserId} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist}/> : null}
+        {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUserId} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} /> : null}
         {/* {console.log(songs.listOfSongsFromAPI)} */}
       </form>
       {/* <header className="App-header">
