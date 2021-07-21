@@ -42,7 +42,7 @@ export default function Quiz () {
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
-	const [score, setScore] = useState(0);
+	const [score] = useState(0);
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		// if (isCorrect) {
