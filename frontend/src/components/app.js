@@ -5,6 +5,7 @@ import '../styling/application.scss'
 import PlaylistGenerator from './playlist/playlist_generator';
 import Quiz from './quiz/quiz';
 import NavBarContainer from './navbar/navbar_container';
+import UserShowContainer from "./user_show/user_show_container"
 
 // import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
@@ -22,6 +23,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/playlists" component={PlaylistGeneratorContainer} />
+        <ProtectedRoute exact path="/user/:userId" component={UserShowContainer} />
     </Switch>
   </div>
 );

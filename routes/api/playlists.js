@@ -25,13 +25,14 @@ const Playlist = require('../../models/Playlist');
 //     );
 // });
 
-// router.get('/:id', (req, res) => {
-//     Playlist.findById(req.params.id)
-//         .then(playlist => res.json(playlist))
-//         .catch(err =>
-//             res.status(404).json({ noplaylistfound: 'No playlist found with that ID' })
-//         );
-// });
+// get playlists for a user
+router.get('/', (req, res) => {
+    Playlist.find({ userId: req.params.userId })
+        .then(playlist => res.json(playlist))
+        .catch(err =>
+            res.status(404).json({ noplaylistfound: 'No playlist found with that ID' })
+        );
+});
 
 router.post('/',
     // passport.authenticate('jwt', { session: false }),

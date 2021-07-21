@@ -27,13 +27,15 @@ export const removePlaylist = (playlistId) => {
     playlistId
   })
 }
-  
-// export const requestPlaylist = (playlistId) => dispatch => {
-//   return(
-//     PlaylistAPIUtil.fetchPlaylist(playlistId)
-//     .then(playlist => dispatch(receivePlaylist(playlist)))
-//   )
-// }
+
+
+// thunk actions
+export const requestPlaylists = (userId) => dispatch => {
+  return(
+    PlaylistAPIUtil.fetchPlaylists(userId)
+      .then(playlist => dispatch(receivePlaylist(playlist)))
+  )
+}
       
 export const createPlaylist = playlist => dispatch => {
   return(

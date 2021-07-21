@@ -18,6 +18,7 @@ const NavBar = ({ currentUser, logout }) => {
                             <div>
                               {currentUser.id}
                               <Link to="/" onClick={logout}>Log out</Link>
+                              <Link to={`/user/${currentUser.id}`}>Playlist</Link>
                             </div>
                           </div>
                         </>
