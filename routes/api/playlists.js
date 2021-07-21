@@ -43,7 +43,8 @@ router.post('/',
     //   }
       const newPlaylist = new Playlist({
         userId: req.body.userId,
-        songs: req.body.songs // revisit
+        widget: req.body.widget,
+        songs: req.body.songs
       });
       
       newPlaylist.save( (err, result) => {

@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 const PlaylistSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
-    ref: 'users'
+    ref: 'users',
+    required: true
   },
+  widget: String,
   songs: [{
     title: {
       type: String,
@@ -13,7 +15,7 @@ const PlaylistSchema = new Schema({
     },
     artist: {
       type: String,
-      require: true
+      required: true
     },
     preview: String,
     image: String

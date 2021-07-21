@@ -1,7 +1,6 @@
 import React from 'react'
 
 const SavePlaylist = (props) => {
-    
    const playlistArray = props.playlist.map((song) => {
         return ({
             title: song.track.name,
@@ -13,9 +12,10 @@ const SavePlaylist = (props) => {
 
     const playlist = {
         userId: props.currentUserId, 
-        songs: playlistArray
+        songs: playlistArray,
+        widget: `https://open.spotify.com/embed/playlist/${props.selectedPlaylist}`
     }
-    console.log(playlistArray)
+    console.log(playlist)
     // console.log(`userId: ${props.currentUserId}, playlist: ${playlistArray}`)
     return (
         <div>
