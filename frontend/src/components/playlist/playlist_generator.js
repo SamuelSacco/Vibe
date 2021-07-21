@@ -42,7 +42,10 @@ function PlaylistGenerator(props) {
         setGenres({
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
-          //.filter((el) => el.name.includes(props.MOOD))***************
+          .filter((el) => {
+            let happy = ['Hip Hop', 'Workout', 'Party', 'Pop']
+            return happy.includes(el.name)
+          })
         })
       })
     })
@@ -63,6 +66,8 @@ function PlaylistGenerator(props) {
       setPlaylist({
         selectedPlaylist: playlist.selectedPlaylist,
         listOfPlaylistsFromAPI: playlistResponse.data.playlists.items
+
+        // .filter((el) => el.name.includes(props.vibe.score))
         // playlistUrl: playlistResponse.dada.playlists
       })
     })
