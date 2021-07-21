@@ -1,6 +1,5 @@
 import { RECEIVE_PLAYLIST, RECEIVE_PLAYLISTS, REMOVE_PLAYLIST } from '../actions/playlist_actions';
 
-
 const playlistsReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   let newState;
