@@ -5,8 +5,8 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import {fetchPlaylists} from "./util/playlist_api_util"
-import { requestPlaylists } from './actions/playlist_actions';
+// import axios from "axios"
+import { deletePlaylist } from "./actions/playlist_actions"
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   
   // testing
-  window.requestPlaylists = requestPlaylists;
-  window.fetchPlaylists = fetchPlaylists;
+  // window.axios = axios;
+  window.deletePlaylist = deletePlaylist;
   //end testing
 
   ReactDOM.render(<Root store={store} />, root);
