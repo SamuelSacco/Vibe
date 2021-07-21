@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React, { useState } from 'react';
-import { fetchMoodScore } from '../../actions/quiz_actions';
+import { fetchVibe } from '../../actions/quiz_actions';
 import { logout } from '../../actions/session_actions';
 
 const mDTP = dispatch => ({
 	logout: () => dispatch(logout()),
-	submitQuiz: score => dispatch(fetchMoodScore(score))
+	submitQuiz: vibe => dispatch(fetchVibe(vibe))
 })
 
 export function Quiz (props) {
@@ -41,10 +41,10 @@ export function Quiz (props) {
 		{
 			questionText: 'How are you feeling right now?',
 			answerOptions: [
-				{ answerText: 'Not gonna lie, I\'m feeling low right now', mood: 'sad'},
-				{ answerText: 'I\'m on top of the world', mood: 'happy'},
-				{ answerText: 'Would much rather be doing something else, to be honest', mood: 'bored'},
-				{ answerText: 'I\'m feeling lucky', mood: 'lucky'},
+				{ answerText: 'Not gonna lie, I\'m feeling low right now', mood: 'sad', points: 0},
+				{ answerText: 'I\'m on top of the world', mood: 'happy', points: 0},
+				{ answerText: 'Would much rather be doing something else, to be honest', mood: 'bored', points: 0},
+				{ answerText: 'I\'m feeling lucky', mood: 'lucky', points: 0},
 			],
 		},
 	];
@@ -54,7 +54,7 @@ export function Quiz (props) {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0); // find way to make score persist to state/store upon
-	const [vibe, setVibe] = useState('');
+	const [mood, setMood] = useState('');
 	
 	const handleAnswerOptionClick = (points) => {
 		setScore(score + points);
@@ -62,11 +62,17 @@ export function Quiz (props) {
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
+		} else if (nextQuestion === questions.length - 1) {
+			setMood(mood)
 		} else {
 			setShowScore(true)
+			let vibe = {
+				score: score + points,
+				mood: mood
+			}
 			console.log(score)
 			console.log(props)
-			props.submitQuiz(score + points)
+			props.submitQuiz(vibe)
 		}
 	};
 	return (

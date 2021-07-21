@@ -1,13 +1,13 @@
-export const RECEIVE_MOOD_SCORE = "RECEIVE_MOOD_SCORE"
+export const RECEIVE_VIBE = "RECEIVE_VIBE"
 
-const receiveMoodScore = score => (
+const receiveVibe = vibe => (
     {
-    type: RECEIVE_MOOD_SCORE,
-    score
+    type: RECEIVE_VIBE,
+    vibe
 })
 
-export const fetchMoodScore = score => dispatch => (
-    dispatch(receiveMoodScore(score))
+export const fetchVibe = vibe => dispatch => (
+    dispatch(receiveVibe(vibe))
 )
 
 // s/o Pauly
