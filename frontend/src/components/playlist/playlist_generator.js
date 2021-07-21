@@ -4,10 +4,11 @@ import Dropdown from './dropdown';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Listbox from './listbox';
-import TestMap from './test_map';
+import { createPlaylist } from '../../actions/playlist_actions';
+import SavePlaylist from './save_playlist';
 
-function PlaylistGenerator() {
-  
+function PlaylistGenerator(props) {
+  console.log(props)
   const clientId = '79eb0fab585d4f86bcfba8abde304372'
   const secretId = 'b704db72f82c45cd83aff68ad527d664'
   
@@ -45,7 +46,6 @@ function PlaylistGenerator() {
       })
     })
   }, [genres.selectedGenre, clientId, secretId])
-
   const genreChanged = (val) => {
     setGenres({
       selectedGenre: val,
@@ -65,7 +65,7 @@ function PlaylistGenerator() {
       })
     })
 
-    console.log("val", val)
+    // console.log("val", val)
   }
 
   const playlistChanged = val => {
@@ -75,7 +75,7 @@ function PlaylistGenerator() {
     });
 
   }
-  console.log("playlist test", playlist.selectedPlaylist);
+  // console.log("playlist test", playlist.selectedPlaylist);
 
   const buttonClicked = e => {
     // debugger;
@@ -118,7 +118,7 @@ function PlaylistGenerator() {
           </button>
           <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/>
         </div>
-        {songs.listOfSongsFromAPI.length > 1 ? <TestMap playlist={songs.listOfSongsFromAPI}/> : null}
+        {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUserId} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist}/> : null}
         {/* {console.log(songs.listOfSongsFromAPI)} */}
       </form>
       {/* <header className="App-header">

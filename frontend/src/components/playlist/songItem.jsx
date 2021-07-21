@@ -1,7 +1,11 @@
 import React from 'react'
 
 const SongItem = (props) => {
-    const audio = new Audio (props.preview)
+    let audio;
+
+    if (props.preview){
+        audio = new Audio (props.preview)
+    } 
 
     const start = () => {
         audio.play()

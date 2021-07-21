@@ -42,6 +42,7 @@ router.post('/',
     //     return res.status(400).json(errors);
     //   }
       const newPlaylist = new Playlist({
+        userId: req.body.userId,
         songs: req.body.songs // revisit
       });
       
