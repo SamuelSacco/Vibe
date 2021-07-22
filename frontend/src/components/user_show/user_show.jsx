@@ -10,33 +10,35 @@ function UserShow(props){
   }, [])
   
   return (
-    // <h1>Test</h1>
-    <ul>
-      <h1>Test</h1>
-      {
-        props.playlists.map( (playlist, idx) => 
-          <UserListItem 
-            key={idx} 
-            widget={playlist.widget} 
-            deletePlaylist={props.deletePlaylist}
-            playlistId={playlist._id}
-            />
-        )
-      }
-        {/* {
-          props.playlists.data ?
-          props.playlists.data.map((playlist, idx) => {
-            return (
-              <UserListItem 
-              key={idx}
-              widget={playlist.widget}
+    <>
+      <h1 className='user-show-header'>My Vibes</h1>
+      <ul className='user-playlists'>
+        test
+        {
+          props.playlists.map( (playlist, idx) => 
+            <UserListItem 
+              key={idx} 
+              widget={playlist.widget} 
+              deletePlaylist={props.deletePlaylist}
+              playlistId={playlist._id}
               />
-            )
-          })
-          :
-          null
-        } */}
+          )
+        }
+          {/* {
+            props.playlists.data ?
+            props.playlists.data.map((playlist, idx) => {
+              return (
+                <UserListItem 
+                key={idx}
+                widget={playlist.widget}
+                />
+              )
+            })
+            :
+            null
+          } */}
       </ul>
+    </>
     )
 }
 
