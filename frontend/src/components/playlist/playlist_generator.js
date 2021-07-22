@@ -8,7 +8,7 @@ import { createPlaylist } from '../../actions/playlist_actions';
 import SavePlaylist from './save_playlist';
 
 function PlaylistGenerator(props) {
-  console.log(props)
+  console.log("PROPS", props)
   const clientId = '79eb0fab585d4f86bcfba8abde304372'
   const secretId = 'b704db72f82c45cd83aff68ad527d664'
   
@@ -42,16 +42,11 @@ function PlaylistGenerator(props) {
         setGenres({
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
-          .filter((el) => {
-            let moodAll = ['Pop', 'At Home', 'In the car','Workout', 'Mood', 'Chill', 'Party'];
-            let moodHappy = ['At Home', 'Mood', 'In the car', 'Workout'];
-            let moodSad = ['Chill', 'Workout', 'Party', 'Pop'];
-            
-          })
         })
       })
     })
   }, [genres.selectedGenre, clientId, secretId])
+  
   const genreChanged = (val) => {
     setGenres({
       selectedGenre: val,
@@ -68,14 +63,6 @@ function PlaylistGenerator(props) {
       setPlaylist({
         selectedPlaylist: playlist.selectedPlaylist,
         listOfPlaylistsFromAPI: playlistResponse.data.playlists.items
-        // .filter((el) => {
-        //   let happyMood = 'Mood';// score 1-3
-        //   let happyAtHome = 'At Home';
-        //   let happyInTheCar = 'In the car';
-        //   let happyWorkout = 'Workout';
-         
-        //   return happyMood.includes(el.name)
-        // })
       })
     })
   }

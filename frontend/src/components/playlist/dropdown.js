@@ -9,7 +9,7 @@ const Dropdown = props => {
     return (
         <div>
             <select value={props.selectedValue} onChange={dropDownChanged} placeholder="choose a song">
-                <option selected>{props.dropDownType}</option>
+                {/* <option selected>{props.dropDownType}</option> */}
                 {props.options.map((item, idx) => <option key={idx} value={item.id}>{item.name}</option>)}
             </select>
         </div>

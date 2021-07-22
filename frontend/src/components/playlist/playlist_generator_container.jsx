@@ -5,8 +5,8 @@ import PlaylistGenerator from './playlist_generator';
 const mSTP = (state, ownProps) => {
     return ({
         currentUser: state.session.user,
-        ownProps: ownProps
-        //MOOD: state.entities.mood
+        ownProps: ownProps,
+        activity: state.entities.vibe.activity
     })
 }
 

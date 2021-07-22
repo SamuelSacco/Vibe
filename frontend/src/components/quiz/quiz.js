@@ -9,7 +9,7 @@ const mDTP = dispatch => ({
 })
 
 export function Quiz (props) {
-	
+	const genres = ["Pop", "Hip Hop", "In the car", "Gaming"]
 	const questions = [
 		{
 			questionText: 'What would you most likely do when you have free time?',
@@ -21,13 +21,12 @@ export function Quiz (props) {
 			],
 		},
 		{
-			
-			questionText: 'What do you like to do when you\'re feeling blue?',
+			questionText: 'Which song lyric do you resonate with most right now?',
 			answerOptions: [
-				{ answerText: 'Eat a pint of ice cream and watch your favorite Ryan Gosling romcoms', activity: "Chill"},
-				{ answerText: 'Let my emotions fuel your workout', activity: "Workout"},
-				{ answerText: 'Put on your best pair of sweats to impress the GrubHub guy', activity: "Party"},
-				{ answerText: 'Turn Adele up to 11', activity: "Pop"},
+				{ answerText: "'I'm so lonely' Lonely - Justin Bieber ", mood: "Sad"},
+				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling - Black Eyed Peas", mood: "Happy"},
+				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song - Bruno Mars", mood: "Sad"},
+				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?'", mood: "Happy"},
 			],
 		},
 		{
@@ -40,12 +39,12 @@ export function Quiz (props) {
 			],
 		},
 		{
-			questionText: 'Which song lyric do you resonate with most right now?',
+			questionText: 'What do you like to do when you\'re feeling blue?',
 			answerOptions: [
-				{ answerText: "'I'm so lonely' Lonely - Justin Bieber ", mood: "Sad"},
-				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling - Black Eyed Peas", mood: "Happy"},
-				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song - Bruno Mars", mood: "Sad"},
-				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?'", mood: "Happy"},
+				{ answerText: 'Eat a pint of ice cream and watch your favorite Ryan Gosling romcoms', activity: "Chill"},
+				{ answerText: 'Let my emotions fuel your workout', activity: "Workout"},
+				{ answerText: 'Put on your best pair of sweats to impress the GrubHub guy', activity: "Party"},
+				{ answerText: 'Turn Adele up to 11', activity: "Pop"},
 			],
 		},
 	];
