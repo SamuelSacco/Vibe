@@ -115,7 +115,7 @@ function PlaylistGenerator(props) {
   }
 
   return (
-    <div className="App">
+    <div>
       <form onSubmit= {buttonClicked}>
         <div className="container">
           <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre"/>

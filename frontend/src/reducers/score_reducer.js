@@ -13,4 +13,3 @@ const vibeReducer = (oldState = {}, action) => {
 };
 
 export default vibeReducer;
-

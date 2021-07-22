@@ -48,7 +48,6 @@ export function Quiz (props) {
 			],
 		},
 	];
-
 	
 	
 	const [currentQuestion, setCurrentQuestion] = useState(0);
