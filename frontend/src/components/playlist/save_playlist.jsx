@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom';
+// import {withRouter} from 'react-router-dom';
 
 const SavePlaylist = (props) => {
    const playlistArray = props.playlist.map((song) => {
@@ -16,31 +16,23 @@ const SavePlaylist = (props) => {
         songs: playlistArray,
         widget: `https://open.spotify.com/embed/playlist/${props.selectedPlaylist}`
     }
-    // const savePlaylist = () => {
-    //     props.createPlaylist(playlist)
-    //     props.ownProps.history.push(`/user/${props.currentUserId}`)
-    // }
-    // console.log(`userId: ${props.currentUserId}, playlist: ${playlistArray}`)
-
 
     function handleSubmit() {
-      
-      props.createPlaylist(playlist)
-      props.history.push(`/user/${props.currentUserId}`)
+      props.createPlaylist(playlist)()
+      props.ownProps.history.push(`/user/${props.currentUserId}`)
     }
 
-      return (
+    console.log("PROPS", props, "PLAYLIST", playlist)
+    return (
         <div>
             <button onClick={handleSubmit} className='playlist-func-button'>Save Playlist</button>
+            {/* <button onClick={props.createPlaylist(playlist)}>Save Playlist</button> */}
         </div>
     )
-
 }
 
 // .then(() => {)
-
-export default withRouter(SavePlaylist);
-
+export default SavePlaylist;
 // import React, { Component } from 'react'
 
 // export default class SavePlaylist extends Component {

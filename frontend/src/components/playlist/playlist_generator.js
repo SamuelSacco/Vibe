@@ -160,6 +160,8 @@ function PlaylistGenerator(props) {
                 playlist={songs.listOfSongsFromAPI} 
                 createPlaylist={createPlaylist} 
                 selectedPlaylist={playlist.selectedPlaylist}
+                className='playlist-func-button'
+                ownProps={props.ownProps}
               />
               </div>
             </div>
