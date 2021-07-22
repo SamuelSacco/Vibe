@@ -19,7 +19,7 @@ const SavePlaylist = (props) => {
 
     function handleSubmit() {
       props.createPlaylist(playlist)()
-    //   props.ownProps.history.push(`/user/${props.currentUserId}`)
+      props.ownProps.history.push(`/user/${props.currentUserId}`)
     }
 
     console.log("PROPS", props, "PLAYLIST", playlist)
