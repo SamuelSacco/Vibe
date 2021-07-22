@@ -41,7 +41,10 @@ function PlaylistGenerator(props) {
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
             .filter((el) => {
+
+         
               let filter = 'Workout'
+
               return filter.includes(el.name)
             })
         })
@@ -49,7 +52,9 @@ function PlaylistGenerator(props) {
         let filteredResponse =
           genreResponse.data.categories.items
             .filter((el) => {
+
               let filter = 'Workout'
+
               return filter.includes(el.name)
             })[0].id
 
