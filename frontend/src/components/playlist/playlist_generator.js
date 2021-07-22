@@ -43,8 +43,8 @@ function PlaylistGenerator(props) {
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
           .filter((el) => {
-            let happy = ['Hip Hop', 'Workout', 'Party', 'Pop']
-            return happy.includes(el.name)
+            let moodHappy = ['Pop']
+            return moodHappy.includes(el.name)
           })
         })
       })
@@ -66,13 +66,13 @@ function PlaylistGenerator(props) {
       setPlaylist({
         selectedPlaylist: playlist.selectedPlaylist,
         listOfPlaylistsFromAPI: playlistResponse.data.playlists.items
-
-        // .filter((el) => el.name.includes(props.vibe.score))
-        // playlistUrl: playlistResponse.dada.playlists
+        // .filter((el) => {
+        //   let scoreLow = ['Beast Mode', 'Gold School'] // score 1-3
+        //   let scoreKindaLow = ['Latin Hits', ASMR Sleep, ]
+        //   return scoreLow.includes(el.name)
+        // })
       })
     })
-
-    // console.log("val", val)
   }
 
   const playlistChanged = val => {
