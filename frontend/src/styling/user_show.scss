@@ -1,0 +1,14 @@
+.user-show-header{
+    width: 80%;
+    text-align: left;
+}
+
+.user-playlists{
+    border: 1px solid black;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

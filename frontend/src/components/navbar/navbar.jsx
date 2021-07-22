@@ -16,7 +16,7 @@ const NavBar = ({ currentUser, logout }) => {
                     <i className="fas fa-bars fa-2x drop-icon"></i>
                   </a>
                   <div className="dropdown-content">
-                    <Link to={`/user/${currentUser.id}`}>Playlist</Link>
+                    <Link to={`/user/${currentUser.id}`}>My Vibes</Link>
                     <Link to="/" onClick={logout}>Log out</Link>
                   </div>
                 </div>
