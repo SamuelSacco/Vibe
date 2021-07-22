@@ -15,13 +15,18 @@ const SavePlaylist = (props) => {
         songs: playlistArray,
         widget: `https://open.spotify.com/embed/playlist/${props.selectedPlaylist}`
     }
-    console.log(playlist)
+    const savePlaylist = () => {
+        props.createPlaylist(playlist)
+        props.ownProps.history.push(`/user/${props.currentUserId}`)
+    }
     // console.log(`userId: ${props.currentUserId}, playlist: ${playlistArray}`)
     return (
         <div>
-            <button onClick={props.createPlaylist(playlist).then(() => {props.history.push(`/user/:userId`)})}>Save Playlist</button>
+            <button onClick={() => savePlaylist(playlist)}>Save Playlist</button>
         </div>
     )
 }
+
+// .then(() => {)
 
 export default SavePlaylist;
