@@ -6,7 +6,7 @@ const vibeReducer = (oldState = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_VIBE:
-      return Object.assign({}, oldState, { score: action.vibe.score, mood: action.vibe.mood });
+      return Object.assign({}, oldState, { activity: action.vibe.activity, mood: action.vibe.mood });
     default:
       return oldState;
   }
