@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { createPlaylist } from '../../actions/playlist_actions';
 import PlaylistGenerator from './playlist_generator';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     return ({
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        ownProps: ownProps
         //MOOD: state.entities.mood
     })
 }

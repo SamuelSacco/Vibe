@@ -102,7 +102,7 @@ function PlaylistGenerator(props) {
       })
     });
   }
-
+  console.log(props.ownProps)
   const listboxClicked = val => {
 
     const currentSongs = [...songs.listOfSongsFromAPI];
@@ -125,7 +125,7 @@ function PlaylistGenerator(props) {
               playlist.selectedPlaylist ? 
               <div>
                 <iframe title="playlist-widget" src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} />
+                <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} ownProps={props.ownProps} selectedPlaylist={playlist.selectedPlaylist} />
               </div>
             : null
             }

@@ -6,29 +6,21 @@ import PlaylistGenerator from './playlist/playlist_generator';
 import Quiz from './quiz/quiz';
 import NavBarContainer from './navbar/navbar_container';
 import UserShowContainer from "./user_show/user_show_container"
-import Splash from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
 
 const App = () => (
 
-    <div className="splash-wrapper">
+  <div className="splash-wrapper">
+      <ProtectedRoute component={NavBarContainer}/>
       <Switch>
           <AuthRoute exact path="/" component={LoginFormContainer}/>
-          <Route exact path="/quiz">
-            <NavBarContainer />
-            <Quiz/>
-          </Route>
+          <Route exact path="/quiz" component={Quiz}/>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
-          <Route exact path="/playlists">
-            <NavBarContainer />
-            <PlaylistGeneratorContainer/>
-          </Route>
-          <ProtectedRoute exact path="/user/:userId">
-            <NavBarContainer />
-            <UserShowContainer />
-          </ProtectedRoute>
+          <Route exact path="/playlists" component={PlaylistGeneratorContainer}/>
+          <ProtectedRoute exact path="/user/:userId" component={UserShowContainer}/>
       </Switch>
     </div>
 );
