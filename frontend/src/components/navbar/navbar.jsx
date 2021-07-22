@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const NavBar = ({ currentUser, logout }) => {
 
-  console.log(currentUser);
   return (
     <nav className='navbar'>
       {
