@@ -16,13 +16,14 @@
     width: 800px;
     border-radius: 10px;
     opacity: 1;
+    animation: form-load 2.25s ease-in-out;
 }
 
 .playlist-func-button-wrapper{
     margin: 10px;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    // justify-content: flex-start;
 }
 
 .playlist-func-button{
@@ -33,5 +34,9 @@
     background-color: rgba(240, 240, 240, 0.3);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: flex-end;
+    animation: form-load 2.25s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
