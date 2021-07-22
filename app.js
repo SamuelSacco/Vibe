@@ -22,10 +22,10 @@ require('./config/passport')(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use((err, req, res, next) => {
-    console.log('congrats you hit the error middleware');
-    console.log(err);
-}
+// app.use((err, req, res, next) => {
+//     console.log('congrats you hit the error middleware');
+//     console.log(err);
+// }
 //testing
 
 // Playlist.find( {userId: "60f7575c9f7102e0c0723220"}, (err, res) => {
