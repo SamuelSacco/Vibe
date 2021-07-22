@@ -14,7 +14,7 @@ export const receivePlaylists = (playlists) => {
 export const receivePlaylist = (playlist) => {
   return({
     type: RECEIVE_PLAYLIST, //
-    playlist
+    playlist // might have to be changed to playlist.data
   })
 }
 
@@ -24,7 +24,6 @@ export const removePlaylist = (playlistId) => {
     playlistId
   })
 }
-
 
 
 // thunk actions

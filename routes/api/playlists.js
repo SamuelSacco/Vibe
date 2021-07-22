@@ -27,6 +27,10 @@ router.post('/',
         songs: req.body.songs
       });
       
+      // newPlaylist.save()
+      //   .then(playlist => res.json(playlist))
+      //   .catch(err => res.status(404).json({ save: 'Unable to save playlist' }));
+
       newPlaylist.save( (err, res) => {
         if (err) {
           console.log(err);
@@ -41,12 +45,7 @@ router.post('/',
 router.delete('/:playlist_id', (req, res) => {
   Playlist.remove({ _id: req.params.playlist_id })
     .then(playlist => res.json(playlist))
-    // if (err) {
-    //   console.log(err)
-    // } else {
-    //   console.log(res)
-    // }
-  // });
+    .catch(err => res.status(404).json({ delete: 'Unable to delete playlist' }));
 
   // Playlist.remove({ _id: req.params.playlist_id }, (err, res) => {
   //   if (err) {
