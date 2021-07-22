@@ -15,16 +15,21 @@ const App = () => (
 
     <div className="splash-wrapper">
       <Switch>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <AuthRoute exact path="/" component={Splash}/>
-        <ProtectedRoute path="/" component={NavBarContainer}/>
-      </Switch>
-
-      <Switch>
-          <Route exact path="/quiz" component={Quiz}/>
-          <Route exact path="/playlists" component={PlaylistGeneratorContainer} />
-          <ProtectedRoute exact path="/user/:userId" component={UserShowContainer} />
+          <AuthRoute exact path="/" component={Splash}/>
+          <Route exact path="/quiz">
+            <NavBarContainer />
+            <Quiz/>
+          </Route>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <Route exact path="/playlists">
+            <NavBarContainer />
+            <PlaylistGeneratorContainer/>
+          </Route>
+          <ProtectedRoute exact path="/user/:userId">
+            <NavBarContainer />
+            <UserShowContainer />
+          </ProtectedRoute>
       </Switch>
     </div>
 );

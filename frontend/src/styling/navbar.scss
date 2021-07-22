@@ -34,9 +34,6 @@
     background-color: transparent;
 }
 
-.create {
-    color: blue;
-}
 a:visited, link:visited{
     text-decoration: none;
 }
@@ -67,7 +64,7 @@ a:visited, link:visited{
     top: 51px;
     transition: visibility 0s, opacity .35s ease-in-out;
     border-radius: 5px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgba(240, 240, 240, 0.287);
 }
 
 .dropdown-content a {
@@ -75,10 +72,11 @@ a:visited, link:visited{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    color: rgb(255, 255, 255);
+
 
     &:first-child{
-        
-        border-bottom: 1px solid rgb(216, 216, 216);
+        border-bottom: 1px solid rgba(240, 240, 240, 0.287);
     }
 }
 
@@ -108,3 +106,6 @@ a:visited, link:visited{
     cursor: pointer;
     }
 
+.drop-icon{
+    opacity: 0.3;
+}

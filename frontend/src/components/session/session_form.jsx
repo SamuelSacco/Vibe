@@ -28,6 +28,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.processForm(demoUser)
         // this.props.history.push(`/`)
+        this.props.history.push(`/quiz`)
       }
     }
 

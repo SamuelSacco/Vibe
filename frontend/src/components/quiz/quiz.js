@@ -82,18 +82,20 @@ export function Quiz (props) {
 			) : (
 				<>
 					<div className='question-section'>
-						<div className='question-count'>
+						{/* <div className='question-count'>
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
-						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
+						</div> */}
+						<h2 className='question-text'>{questions[currentQuestion].questionText}</h2>
 					</div>
-					<div className='quiz-question'>
+					<div className='quiz-answers'>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button 
 								onClick={() => handleAnswerOptionClick(answerOption.points, answerOption.mood)}
 								className='quiz-answer'
 							>
-								{answerOption.answerText}
+								<div className='quiz-answer-text'>
+									{answerOption.answerText}
+								</div>
 							</button>
 						))}
 					</div>

@@ -8,34 +8,62 @@
   }
   
   .quiz { 
-    background: #cfcfcf;
-    width: 500px;
+    background: rgba(240, 240, 240, 0.52);
+    border-radius: 5px;
+    width: 800px;
     height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  .quiz-question{
-    align-content: flex-start;
-  }
-  
-  .quiz-answer-wrapper{
+
+  .question-section{
+    // border: 1px solid black;
+    height: 150px;
+    width: 670px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
+
+  .question-text{
+    // border: 1px solid rebeccapurple;
+    text-align: center;
+  }
+  
+  .quiz-answers{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
   
   .quiz-answer{
-    background-color: white;
+    // background-color: white;
+    background: rgba(240, 240, 240, 0.52);
     color: black;
     border-radius: 5px;
-    width: 200px;
-    height: 100px;
-    margin: 10px;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    font-size: 21px;
+    font-weight: 500;
+    transition: .325s ease-in-out;
+    // transition: box-shadow 0.25s ease-in-out;
+
+    &:hover{
+      background: rgba(240, 240, 240, 0.9);
+      margin-top: 5px;
+      box-shadow: 0px 0px 15px 8px rgba(148, 148, 148, 0.5);
+    }
+  }
+
+  .quiz-answer-text {
+    width: 85%;
   }
