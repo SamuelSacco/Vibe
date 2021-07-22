@@ -115,7 +115,11 @@ class SessionForm extends React.Component {
           <div className="splash-container">
               <form onSubmit={this.handleSubmit} className="session-form">
                 <h2 className='logo'>
-                    (( vibe ))
+                  <img 
+                    src="https://cdn.discordapp.com/attachments/844198011239923724/867901223784939570/VIBE_LOGO-C.png" 
+                    alt="vibelogo" 
+                    className='navbar-logo'
+                  />
                 </h2>
                 <br />
       

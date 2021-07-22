@@ -7,7 +7,14 @@ const NavBar = ({ currentUser, logout }) => {
     <nav className='navbar'>
       {
         currentUser ? (
-            <div>
+            <>
+              <Link to={`/quiz`}>
+                <img 
+                  src="https://cdn.discordapp.com/attachments/844198011239923724/867901223784939570/VIBE_LOGO-C.png" 
+                  alt="vibelogo" 
+                  className='navbar-logo'
+                />
+              </Link>
               <div className="nav-bar-links">
                 <div className="dropdown">
                   <a className="signup-login-link dropbtn">    {/* change this to Link when I create userShow --> */}
@@ -21,7 +28,7 @@ const NavBar = ({ currentUser, logout }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </>
         ) 
       :   
         (
