@@ -7,7 +7,7 @@ export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST"
 export const receivePlaylists = (playlists) => {
   return({
     type: RECEIVE_PLAYLISTS, //
-    playlists
+    playlists: playlists.data
   })
 }
 
@@ -46,6 +46,8 @@ export const deletePlaylist = playlistId => dispatch => (
   PlaylistAPIUtil.deletePlaylist(playlistId)
     .then( () => dispatch(removePlaylist(playlistId)))
 )
+
+// need to fix(?) receivePlaylist and removePlaylist regular actions
 
 // export const updatePlaylist = (playlist) => dispatch => {
 //   return(

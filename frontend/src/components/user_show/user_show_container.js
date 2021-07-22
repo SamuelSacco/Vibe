@@ -5,7 +5,7 @@ import UserShow from './user_show';
 const mSTP = (state, ownProps) => {
     return ({
         userId: ownProps.match.params.userId,
-        playlists: state.entities.playlists
+        playlists: Object.values(state.entities.playlists),
     })
 }
 
