@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import UserListItem from './user_list_item';
 
 function UserShow(props){
-  
-  const [playlists, updatePlaylists] = useState('')
+  const [playlists, updatePlaylists] = useState('');
+  const [user, updateUser] = useState('')
   
   useEffect(() => {
     updatePlaylists(props.requestPlaylists(props.userId))
+    updateUser(props.requestUser(props.userId))
   }, [])
   
   return (
     <>
-      <h1 className='user-show-header'>My Vibes</h1>
+      <h1 className='user-show-header'>{props.user.username}'s vibes</h1>
+
       <ul className='user-playlists'>
         test
         {

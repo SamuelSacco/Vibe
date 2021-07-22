@@ -7,8 +7,6 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 // import axios from "axios"
 
-import { requestUser } from "./actions/user_actions";
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // testing
   // window.axios = axios;
-  window.requestUser = requestUser
   //end testing
 
   ReactDOM.render(<Root store={store} />, root);
