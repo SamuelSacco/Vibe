@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import '../styling/application.scss'
 import PlaylistGenerator from './playlist/playlist_generator';
 import Quiz from './quiz/quiz';
+// import QuizForm from './quiz/quiz_form';
 import NavBarContainer from './navbar/navbar_container';
 import UserShowContainer from "./user_show/user_show_container"
 import LoginFormContainer from './session/login_form_container';
@@ -26,3 +27,4 @@ const App = () => (
 );
 
 export default App;
+

@@ -8,6 +8,8 @@ const mDTP = dispatch => ({
 	submitQuiz: vibe => dispatch(fetchVibe(vibe))
 })
 
+
+
 export function Quiz (props) {
 	const genres = ["Pop", "Hip Hop", "In the car", "Gaming"]
 	const questions = [
@@ -72,9 +74,12 @@ export function Quiz (props) {
 				mood: mood
 			}
 
-			props.submitQuiz(vibe) // redirect here?
-		}
+			props.submitQuiz(vibe)
+			props.history.push(`/playlists`)
+		 }
+		
 	};
+
 	return (
 		<div className='quiz-wrapper'>
 			<div className='quiz'>
