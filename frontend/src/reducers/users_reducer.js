@@ -12,9 +12,11 @@ const usersReducer = (oldState = {}, action) => {
     case RECEIVE_USERS:
       return action.users
     case RECEIVE_USER:
+      debugger
       return Object.assign({}, oldState, { [action.user.id]: action.user });
     case LOGOUT_CURRENT_USER:
       return {}
+    // case RECEIVE_USER_ERRORS
     default:
       return oldState;
   }
