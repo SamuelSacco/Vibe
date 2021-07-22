@@ -1,0 +1,37 @@
+.mood-playlist{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playlist-show-widget {
+    width: 800px;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.playlist-func-button-wrapper{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.playlist-func-button{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 7.5px;
+    background-color: rgba(240, 240, 240, 0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: flex-end;
+}

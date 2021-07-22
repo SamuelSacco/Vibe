@@ -29,11 +29,12 @@ const SavePlaylist = (props) => {
       props.history.push(`/user/${props.currentUserId}`)
     }
 
-    return (
+      return (
         <div>
             <button onClick={handleSubmit}>Save Playlist</button>
         </div>
     )
+
 }
 
 // .then(() => {)

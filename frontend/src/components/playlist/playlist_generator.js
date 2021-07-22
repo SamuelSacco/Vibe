@@ -41,7 +41,10 @@ function PlaylistGenerator(props) {
           selectedGenre: genres.selectedGenre,
           listOfGenresFromAPI: genreResponse.data.categories.items
             .filter((el) => {
-              let filter = "Chill"
+
+         
+              let filter = 'Workout'
+
               return filter.includes(el.name)
             })
         })
@@ -49,7 +52,9 @@ function PlaylistGenerator(props) {
         let filteredResponse =
           genreResponse.data.categories.items
             .filter((el) => {
-              let filter = "Chill"
+
+              let filter = 'Workout'
+
               return filter.includes(el.name)
             })[0].id
 
@@ -131,26 +136,41 @@ function PlaylistGenerator(props) {
   // }
 
   return (
-    <div className="App">
+    <div className="mood-playlist">
       <form onSubmit={buttonClicked}>
-        <div className="container">
           {/* <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre" />
           <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist" /> */}
-          <div>
-            {/* {
-              playlist.selectedPlaylist ?  */}
-            <div>
-              <iframe title="playlist-widget" src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-              <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} />
+            {
+              playlist.selectedPlaylist ? 
+            <div className='playlist-wrapper'>
+              <iframe 
+                title="playlist-widget" 
+                src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} 
+                width="300" 
+                height="380" 
+                frameBorder="0" 
+                allowtransparency="true" 
+                allow="encrypted-media"
+                className='playlist-show-widget'
+              ></iframe>
+              <div className='playlist-func-button-wrapper'>
+                <SavePlaylist 
+                currentUserId={props.currentUser.id} 
+                playlist={songs.listOfSongsFromAPI} 
+                createPlaylist={createPlaylist} 
+                selectedPlaylist={playlist.selectedPlaylist}
+                className='playlist-func-button'
+              />
+              </div>
             </div>
-            {/* : null
-            } */}
-          </div>
+            : <div>
+              <h1> Fetching your vibe...</h1>
+            </div>
+            }
           {/* <button type="submit">
             Search
           </button> */}
           {/* <Listbox items={songs.listOfSongsFromAPI} clicked={listboxClicked}/> */}
-        </div>
         {/* {songs.listOfSongsFromAPI.length > 1 ? <SavePlaylist currentUserId={props.currentUser.id} playlist={songs.listOfSongsFromAPI} createPlaylist={createPlaylist} selectedPlaylist={playlist.selectedPlaylist} /> : null} */}
       </form>
       {/* <header className="App-header">
