@@ -122,6 +122,11 @@ form {
     to {bottom:0px; opacity: 1;}
 }
 
+@keyframes form-load-header {
+    from {top:-400px; opacity: 0;}
+    to {top:0px; opacity: .6;}
+}
+
 @font-face{
     font-family: Gilroy-ExtraBold;
     src: url("Gilroy-ExtraBold.otf") format("opentype");

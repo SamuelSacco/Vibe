@@ -1,3 +1,33 @@
+.playlist-loading {
+    position: relative;
+    animation: form-load 2.25s ease-in-out;
+}
+
+.playlist-loading-header{
+    opacity: .6;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    animation: form-load-header 2.25s ease-in-out;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.playlist-show-header{
+    opacity: .6;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    animation: form-load-header 2.25s ease-in-out;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.vibe-gif{
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.45);
+}
+
 .mood-playlist{
     height: 100%;
     display: flex;
@@ -16,7 +46,8 @@
     width: 800px;
     border-radius: 10px;
     opacity: 1;
-    animation: form-load 2.25s ease-in-out;
+    animation: form-load 4s ease-in-out;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.45);
 }
 
 .playlist-func-button-wrapper{
@@ -38,5 +69,6 @@
 
     &:hover{
         cursor: pointer;
+        background-color: rgba(240, 240, 240, 0.5);
     }
 }

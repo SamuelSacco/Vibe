@@ -16,6 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    animation: form-load-header 2s ease-in-out;
   }
 
   .question-section{

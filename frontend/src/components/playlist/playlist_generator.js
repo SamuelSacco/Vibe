@@ -19,7 +19,7 @@ function PlaylistGenerator(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 6000)
+    setTimeout(() => setLoading(false), 5000)
     
     // Api call for retrieving token
     axios('https://accounts.spotify.com/api/token', {
@@ -135,6 +135,7 @@ function PlaylistGenerator(props) {
 
   //   setSongDetail(songInfo[0].track);
   // }
+  
 
   return (
     <div className="mood-playlist">
@@ -143,7 +144,8 @@ function PlaylistGenerator(props) {
           <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist" /> */}
             {
               playlist.selectedPlaylist && loading === false ? 
-            <div className='playlist-wrapper'>
+              <div className='playlist-wrapper'>
+              <h1 className='playlist-show-header'>Your vibe is...</h1>
               <iframe 
                 title="playlist-widget" 
                 src={`https://open.spotify.com/embed/playlist/${playlist.selectedPlaylist}`} 
@@ -165,9 +167,12 @@ function PlaylistGenerator(props) {
               />
               </div>
             </div>
-            : <div>
-              <h1>Fetching your vibe...</h1>
-              <img src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'></img>
+            : <div className='playlist-loading'>
+                <h1 className='playlist-loading-header'>(( It's a vibe ))</h1>
+                <img 
+                  src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'
+                  className='vibe-gif'
+                ></img>
             </div>
             }
           {/* <button type="submit">
