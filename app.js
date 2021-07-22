@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const playlists = require("./routes/api/playlists");
-
+const path = require('path');
 const User = require("./models/User")
 const Playlist = require("./models/Playlist");
 
@@ -15,7 +15,6 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-//
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
@@ -59,6 +58,12 @@ app.use(bodyParser.json());
 // });
 
 // end testing
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+       res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
 
 app.use("/api/users", users);
 app.use("/api/playlists", playlists);
