@@ -26,7 +26,6 @@ export const removePlaylist = (playlistId) => {
 }
 
 
-
 // thunk actions
 export const requestPlaylists = (userId) => dispatch => {
   return(
