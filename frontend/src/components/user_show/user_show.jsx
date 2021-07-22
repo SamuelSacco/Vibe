@@ -15,7 +15,6 @@ function UserShow(props){
       <h1 className='user-show-header'>{props.user.username}'s vibes</h1>
 
       <ul className='user-playlists'>
-        test
         {
           props.playlists.map( (playlist, idx) => 
             <UserListItem 

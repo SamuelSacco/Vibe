@@ -21,9 +21,8 @@ const SavePlaylist = (props) => {
     // }
     // console.log(`userId: ${props.currentUserId}, playlist: ${playlistArray}`)
     return (
-        <div>
-            <button onClick={props.createPlaylist(playlist)}>Save Playlist</button>
-        </div>
+                
+                <button onClick={props.createPlaylist(playlist)} className='playlist-func-button'>Save Playlist</button>
     )
 }
 
