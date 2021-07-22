@@ -57,6 +57,14 @@ class SessionForm extends React.Component {
       
     }
 
+    changeButtonColor() {
+      if (document.getElementById("changeColorEmail").value !== "" && document.getElementById("changeColorPassword").value !== '') {
+        document.getElementById("button").style.background = "skyblue";
+      } else {
+        document.getElementById("button").style.background = "#cfcfcf";
+      }
+    }
+
     render(){
       const {formType, navLink } = this.props
 
@@ -121,6 +129,8 @@ class SessionForm extends React.Component {
                       onChange={this.update('email')}
                       onFocus={(e) => e.target.placeholder = ""} 
                       onBlur={(e) => e.target.placeholder = "Email"}
+                      id='changeColorEmail'
+                      onKeyUp={() => this.changeButtonColor()}
                     />
                 </div>
                 <br/>
@@ -134,19 +144,21 @@ class SessionForm extends React.Component {
                       onChange={this.update('password')}
                       onFocus={(e) => e.target.placeholder = ""} 
                       onBlur={(e) => e.target.placeholder = "Password"}
+                      id='changeColorPassword'
+                      onKeyUp={() => this.changeButtonColor()}
                     />
                 </div>
                 <br/>
                 
                 {formType === 'Sign up' ? signupPassword() : ''}
 
-                <input className="formButton" type="submit" value={formType}/>
+                <input className="formButton" type="submit" value={formType} id='button' />
                 <br />
                 {formType === 'Log in' ? 
                   <>
                     <button 
                       onClick={this.demoUserSignin(demoUser)}
-                      className="inputGroup formButton"  
+                      className="inputGroup formButton demo"
                       >Demo User
                     </button> 
                     <br />

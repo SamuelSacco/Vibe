@@ -15,12 +15,11 @@ const App = () => (
 
     <div className="splash-wrapper">
       <Switch>
-          <AuthRoute exact path="/" component={Splash}/>
+          <AuthRoute exact path="/" component={LoginFormContainer}/>
           <Route exact path="/quiz">
             <NavBarContainer />
             <Quiz/>
           </Route>
-          <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <Route exact path="/playlists">
             <NavBarContainer />
