@@ -70,7 +70,7 @@ function PlaylistGenerator(props) {
         })
       })
     })
-  }, [genres.selectedGenre, clientId, secretId])
+  }, [])
   const genreChanged = (val) => {
 
     setGenres({
@@ -134,8 +134,8 @@ function PlaylistGenerator(props) {
     <div className="App">
       <form onSubmit={buttonClicked}>
         <div className="container">
-          <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre" />
-          <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist" />
+          {/* <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre" />
+          <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist" /> */}
           <div>
             {/* {
               playlist.selectedPlaylist ?  */}
