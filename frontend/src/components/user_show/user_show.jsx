@@ -7,14 +7,23 @@ function UserShow(props){
   
   useEffect(() => {
     updatePlaylists(props.requestPlaylists(props.userId))
-  },[])
+  }, [])
   
   return (
     // <h1>Test</h1>
     <ul>
-      {console.log(props)}
       <h1>Test</h1>
-        {
+      {
+        props.playlists.map( (playlist, idx) => 
+          <UserListItem 
+            key={idx} 
+            widget={playlist.widget} 
+            deletePlaylist={props.deletePlaylist}
+            playlistId={playlist._id}
+            />
+        )
+      }
+        {/* {
           props.playlists.data ?
           props.playlists.data.map((playlist, idx) => {
             return (
@@ -26,7 +35,7 @@ function UserShow(props){
           })
           :
           null
-        }
+        } */}
       </ul>
     )
 }

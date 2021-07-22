@@ -6,10 +6,13 @@ const playlistsReducer = (oldState = {}, action) => {
 
   switch (action.type){
     case RECEIVE_PLAYLISTS:
-      return action.playlists
+      newState = {};
+      action.playlists.forEach( playlist => newState[playlist._id] = playlist)
+      return newState;
     case RECEIVE_PLAYLIST:
       return Object.assign({}, oldState, {[action.playlist.id]: action.playlist})
     case REMOVE_PLAYLIST:
+      debugger
       newState = Object.assign({}, oldState)
       delete newState[action.playlistId]
       return newState
