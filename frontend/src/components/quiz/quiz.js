@@ -14,37 +14,38 @@ export function Quiz (props) {
 		{
 			questionText: 'What would you most likely do when you have free time?',
 			answerOptions: [
-				{ answerText: 'Boozy Brunch into a power nap for the rest of the day', points: 2},
-				{ answerText: 'Sleep in, drink coffee, and start that book you\'ve been putting off', points: 1},
-				{ answerText: 'Get a head start on my road trip to Vegas #BottleService', points: 4},
-				{ answerText: 'Hit a SoulCycle class and reward myself with a green juice', points: 3},
+				{ answerText: 'Boozy Brunch into a power nap for the rest of the day', activity: "Mood"},
+				{ answerText: 'Sleep in, drink coffee, and start that book you\'ve been putting off', activity: "At Home"},
+				{ answerText: 'Get a head start on your road trip to Vegas #BottleService', activity: "In the car"},
+				{ answerText: 'Hit a SoulCycle class and reward yourself with a green smoothie', activity: "Workout"},
 			],
 		},
 		{
+			
 			questionText: 'What do you like to do when you\'re feeling blue?',
 			answerOptions: [
-				{ answerText: 'Eat a pint of ice cream and watch my favorite Ryan Gosling romcoms', points: 1},
-				{ answerText: 'Let my emotions fuel my workout', points: 3},
-				{ answerText: 'Put on my best pair of sweats to impress the GrubHub guy', points: 2},
-				{ answerText: 'Indulge in some guilty pleasures like listening to ABBA on blast ', points: 4},
+				{ answerText: 'Eat a pint of ice cream and watch your favorite Ryan Gosling romcoms', activity: "Chill"},
+				{ answerText: 'Let my emotions fuel your workout', activity: "Workout"},
+				{ answerText: 'Put on your best pair of sweats to impress the GrubHub guy', activity: "Party"},
+				{ answerText: 'Turn Adele up to 11', activity: "Pop"},
 			],
 		},
 		{
 			questionText: 'Which quote from Matthew McConaughey\'s Greenlights do you identify with most?',
 			answerOptions: [
-				{ answerText: 'Don’t walk into a place like you wanna buy it, walk in like you own it.', points: 4 },
-				{ answerText: 'I’d rather lose money havin fun than make money being bored.', points: 3},
-				{ answerText: 'We all have scars, we gonna have more.', points: 1},
-				{ answerText: 'Did you know I made up, coined, and created the term McConaissance?', points: 2},
+				{ answerText: 'Don’t walk into a place like you wanna buy it, walk in like you own it.'},
+				{ answerText: 'I’d rather lose money havin fun than make money being bored.'},
+				{ answerText: 'We all have scars, we gonna have more.'},
+				{ answerText: 'Did you know I made up, coined, and created the term McConaissance?'},
 			],
 		},
 		{
 			questionText: 'Which song lyric do you resonate with most right now?',
 			answerOptions: [
-				{ answerText: "'I\'m so lonely' Lonely - Justin Bieber ", mood: 'sad', points: 0},
-				{ answerText: "'I got a feeling that tonight\'s gonna be a good night!' I Got a Feeling - Black Eyed Peas", mood: 'happy', points: 0},
-				{ answerText: "'I\'ll be lounging on the couch, just chilling in my Snuggie' The Lazy Song - Bruno Mars", mood: 'bored', points: 0},
-				{ answerText: "'It\'s Friday then, It\'s Saturday, Sunday, what?'", mood: 'lucky', points: 0},
+				{ answerText: "'I'm so lonely' Lonely - Justin Bieber ", mood: "Sad"},
+				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling - Black Eyed Peas", mood: "Happy"},
+				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song - Bruno Mars", mood: "Sad"},
+				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?'", mood: "Happy"},
 			],
 		},
 	];
@@ -52,34 +53,38 @@ export function Quiz (props) {
 	
 	
 	const [currentQuestion, setCurrentQuestion] = useState(0);
-	const [showScore, setShowScore] = useState(false);
-	const [score, setScore] = useState(0); // find way to make score persist to state/store upon
+	// const [showScore, setShowScore] = useState(false);
+	const [activity, setActivity] = useState(''); // find way to make score persist to state/store upon
 	const [mood, setMood] = useState('');
 	
-	const handleAnswerOptionClick = (points, mood) => {
-		setScore(score + points);
+	const handleAnswerOptionClick = (activity, mood) => {
+		// setActivity(activity);
 		setMood(mood)
 
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
+		} 
+		else if (nextQuestion === 1 || nextQuestion === 2){ 
+			setActivity(activity);
 		} else {
-			setShowScore(true)
+			// setShowScore(true)
 			let vibe = {
-				score: score + points,
+				activity: activity,
 				mood: mood
 			}
-			props.submitQuiz(vibe)
+
+			props.submitQuiz(vibe) // redirect here?
 		}
 	};
 	return (
 		<div className='quiz-wrapper'>
 			<div className='quiz'>
-			{showScore ? (
+			{/* {showScore ? (
 				<div className='score-section'>
 					You scored {score}
 				</div>
-			) : (
+			) : ( */}
 				<>
 					<div className='question-section'>
 						{/* <div className='question-count'>
@@ -90,7 +95,7 @@ export function Quiz (props) {
 					<div className='quiz-answers'>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button 
-								onClick={() => handleAnswerOptionClick(answerOption.points, answerOption.mood)}
+								onClick={() => handleAnswerOptionClick(answerOption.activity, answerOption.mood)}
 								className='quiz-answer'
 							>
 								<div className='quiz-answer-text'>
@@ -100,7 +105,7 @@ export function Quiz (props) {
 						))}
 					</div>
 				</>
-			)}
+			{/* )} */}
 			</div>
 		</div>
 	);
