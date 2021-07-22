@@ -31,7 +31,7 @@ const SavePlaylist = (props) => {
 
       return (
         <div>
-            <button onClick={handleSubmit}>Save Playlist</button>
+            <button onClick={handleSubmit} className='playlist-func-button'>Save Playlist</button>
         </div>
     )
 

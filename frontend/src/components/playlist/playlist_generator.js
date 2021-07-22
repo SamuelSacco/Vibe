@@ -16,9 +16,11 @@ function PlaylistGenerator(props) {
   const [playlist, setPlaylist] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] })
   const [songs, setSongs] = useState({ selectedSong: '', listOfSongsFromAPI: [] });
   const [songDetail, setSongDetail] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
+    setTimeout(() => setLoading(false), 6000)
+    
     // Api call for retrieving token
     axios('https://accounts.spotify.com/api/token', {
       method: 'POST',
@@ -42,7 +44,6 @@ function PlaylistGenerator(props) {
           listOfGenresFromAPI: genreResponse.data.categories.items
             .filter((el) => {
 
-         
               let filter = 'Workout'
 
               return filter.includes(el.name)
@@ -141,7 +142,7 @@ function PlaylistGenerator(props) {
           {/* <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} dropDownType="Select a Genre" />
           <Dropdown options={playlist.listOfPlaylistsFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} dropDownType="Select a Playlist" /> */}
             {
-              playlist.selectedPlaylist ? 
+              playlist.selectedPlaylist && loading === false ? 
             <div className='playlist-wrapper'>
               <iframe 
                 title="playlist-widget" 
@@ -159,12 +160,12 @@ function PlaylistGenerator(props) {
                 playlist={songs.listOfSongsFromAPI} 
                 createPlaylist={createPlaylist} 
                 selectedPlaylist={playlist.selectedPlaylist}
-                className='playlist-func-button'
               />
               </div>
             </div>
             : <div>
-              <h1> Fetching your vibe...</h1>
+              <h1>Fetching your vibe...</h1>
+              <img src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'></img>
             </div>
             }
           {/* <button type="submit">
