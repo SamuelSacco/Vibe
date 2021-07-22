@@ -5,10 +5,9 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 
 export const receiveUser = user => {
-  debugger
   return({
     type: RECEIVE_USER,
-    user
+    user: user.data
   })
 };
 
