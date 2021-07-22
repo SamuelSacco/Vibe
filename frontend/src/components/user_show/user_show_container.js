@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestPlaylists } from '../../actions/playlist_actions';
+import { requestPlaylists, deletePlaylist } from '../../actions/playlist_actions';
 import UserShow from './user_show';
 
 const mSTP = (state, ownProps) => {
@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return ({
-        requestPlaylists: userId => dispatch(requestPlaylists(userId))
+        requestPlaylists: userId => dispatch(requestPlaylists(userId)),
+        deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId))
     })
 }
 

@@ -15,7 +15,12 @@ function UserShow(props){
       <h1>Test</h1>
       {
         props.playlists.map( (playlist, idx) => 
-          <UserListItem key={idx} widget={playlist.widget} />
+          <UserListItem 
+            key={idx} 
+            widget={playlist.widget} 
+            deletePlaylist={props.deletePlaylist}
+            playlistId={playlist._id}
+            />
         )
       }
         {/* {

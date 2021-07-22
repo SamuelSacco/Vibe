@@ -19,6 +19,7 @@ export const receivePlaylist = (playlist) => {
 }
 
 export const removePlaylist = (playlistId) => {
+  debugger
   return({
     type: REMOVE_PLAYLIST, 
     playlistId
@@ -42,10 +43,13 @@ export const createPlaylist = playlist => dispatch => {
   )
 };
 
-export const deletePlaylist = playlistId => dispatch => (
-  PlaylistAPIUtil.deletePlaylist(playlistId)
-    .then( () => dispatch(removePlaylist(playlistId)))
-)
+export const deletePlaylist = playlistId => dispatch => {
+  debugger
+  return (
+    PlaylistAPIUtil.deletePlaylist(playlistId)
+      .then( () => dispatch(removePlaylist(playlistId)))
+  )
+}
 
 // need to fix(?) receivePlaylist and removePlaylist regular actions
 

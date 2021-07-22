@@ -39,13 +39,22 @@ router.post('/',
 
 // delete playlists
 router.delete('/:playlist_id', (req, res) => {
-  Playlist.remove({ _id: req.params.playlist_id }, (err, res) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(res);
-    }
-  });
+  Playlist.remove({ _id: req.params.playlist_id })
+    .then(playlist => res.json(playlist))
+    // if (err) {
+    //   console.log(err)
+    // } else {
+    //   console.log(res)
+    // }
+  // });
+
+  // Playlist.remove({ _id: req.params.playlist_id }, (err, res) => {
+  //   if (err) {
+  //     console.log(err)
+  //   } else {
+  //     console.log(res)
+  //   }
+  // });
 });
 
 module.exports = router;
