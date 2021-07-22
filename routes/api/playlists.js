@@ -27,17 +27,17 @@ router.post('/',
         songs: req.body.songs
       });
       
-      newPlaylist.save()
-        .then(playlist => res.json(playlist))
-        .catch(err => res.status(404).json({ save: 'Unable to save playlist' }));
+      // newPlaylist.save()
+      //   .then(playlist => res.json(playlist))
+      //   .catch(err => res.status(404).json({ save: 'Unable to save playlist' }));
 
-      // newPlaylist.save( (err, res) => {
-      //   if (err) {
-      //     console.log(err);
-      //   } else {
-      //     console.log(res);
-      //   }
-      // })
+      newPlaylist.save( (err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(res);
+        }
+      })
   }
 );
 
