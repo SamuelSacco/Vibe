@@ -25,7 +25,7 @@ const SavePlaylist = (props) => {
     console.log("PROPS", props, "PLAYLIST", playlist)
     return (
         <div>
-            <button onClick={handleSubmit}>Save Playlist</button>
+            <button onClick={handleSubmit} className='playlist-func-button'>Save Playlist</button>
             {/* <button onClick={props.createPlaylist(playlist)}>Save Playlist</button> */}
         </div>
     )
