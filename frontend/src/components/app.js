@@ -10,9 +10,9 @@ import UserShowContainer from "./user_show/user_show_container"
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
+import {Footer} from './footer/footer'
 
 const App = () => (
-
   <div className="splash-wrapper">
       <ProtectedRoute component={NavBarContainer}/>
       <Switch>
@@ -23,6 +23,7 @@ const App = () => (
           <Route exact path="/playlists" component={PlaylistGeneratorContainer}/>
           <ProtectedRoute exact path="/user/:userId" component={UserShowContainer}/>
       </Switch>
+      <Footer/>
     </div>
 );
 
