@@ -10,25 +10,33 @@ export const Footer = () => {
                     <i class="fab fa-linkedin-in footer-logo" ></i>
                 </a> */}
                 <div className='member-links'>
-                    Raphael Talatala
+                    <span>
+                        Raphael Talatala
+                    </span>
                     <a href='https://github.com/rgltalatala' >
                         <i class="fab fa-github footer-logo"></i>
                     </a>
                 </div>
                 <div className='member-links'>
-                    Samuel Sacco
+                    <span>
+                        Samuel Sacco
+                    </span>
                     <a href='https://github.com/SamuelSacco' >
                         <i class="fab fa-github footer-logo"></i>
                     </a>
                 </div>
                 <div className='member-links'>
-                    Paul Kim
+                    <span>
+                        Paul Kim
+                    </span>
                     <a href='https://github.com/pauulkim' >
                         <i class="fab fa-github footer-logo"></i>
                     </a>
                 </div>
                 <div className='member-links'>
-                    Chase Van Haselen
+                    <span>
+                        Chase Van Haselen
+                    </span>
                     <a href='https://github.com/cvhcvhcvh' >
                         <i class="fab fa-github footer-logo"></i>
                     </a>
