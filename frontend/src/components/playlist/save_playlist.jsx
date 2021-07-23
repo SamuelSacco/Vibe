@@ -2,18 +2,18 @@ import React from 'react'
 // import {withRouter} from 'react-router-dom';
 
 const SavePlaylist = (props) => {
-   const playlistArray = props.playlist.map((song) => {
-        return ({
-            title: song.track.name,
-            artist: song.track.artists[0].name,
-            preview: song.track.preview_url,
-            image: song.track.album.images[0].url
-        })
-    })
+//    const playlistArray = props.playlist.map((song) => {
+//         return ({
+//             title: song.track.name,
+//             artist: song.track.artists[0].name,
+//             preview: song.track.preview_url,
+//             image: song.track.album.images[0].url
+//         })
+//     })
 
     const playlist = {
         userId: props.currentUserId, 
-        songs: playlistArray,
+        songs: [],
         widget: `https://open.spotify.com/embed/playlist/${props.selectedPlaylist}`
     }
 

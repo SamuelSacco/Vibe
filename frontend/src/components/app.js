@@ -10,12 +10,14 @@ import UserShowContainer from "./user_show/user_show_container"
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
-
+import { Test } from '../util/test';
 const App = () => (
-
+  
   <div className="splash-wrapper">
+
       <ProtectedRoute component={NavBarContainer}/>
       <Switch>
+      {/* <Test /> */}
           <AuthRoute exact path="/" component={LoginFormContainer}/>
           <Route exact path="/quiz" component={Quiz}/>
           <AuthRoute exact path="/login" component={LoginFormContainer} />
