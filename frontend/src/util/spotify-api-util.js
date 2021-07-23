@@ -38,7 +38,7 @@ export async function getPlaylists(mood){
     const token = await getToken() // gets token
     const genres = await getGenres() // gets a promise array of genre objects
     // debugger
-    const playlistName =  genres.filter(el => mood.includes(el.name))[0].id 
+    const playlistName = genres.filter(el => mood.includes(el.name))[0].id 
     // .filter to reduce array to 1 object
     // [0] to get first object in array
     // .id to string interpolate instead of name
