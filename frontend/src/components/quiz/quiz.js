@@ -25,26 +25,26 @@ export function Quiz (props) {
 		{
 			questionText: 'Which song lyric do you resonate with most right now?',
 			answerOptions: [
-				{ answerText: "'I'm so lonely' \nLonely by Justin Bieber ", mood: "Sad"},
-				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling by Black Eyed Peas", mood: "Happy"},
-				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song by Bruno Mars", mood: "Sad"},
-				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?' Push the Feeling On by Nightcrawlers", mood: "Happy"},
+				{ answerText: "'I'm so lonely'\n\n Lonely by Justin Bieber", mood: "Sad"},
+				{ answerText: "'I got a feeling that tonight's gonna be a good night!'\n\n I Got a Feeling by Black Eyed Peas", mood: "Happy"},
+				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie'\n\n The Lazy Song by Bruno Mars", mood: "Sad"},
+				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?'\n\n Push the Feeling On by Nightcrawlers", mood: "Happy"},
 			],
 		},
 		{
 			questionText: 'Which quote from Matthew McConaughey\'s Greenlights do you identify with most?',
 			answerOptions: [
-				{ answerText: 'Don’t walk into a place like you wanna buy it, walk in like you own it.'},
-				{ answerText: 'I’d rather lose money havin fun than make money being bored.'},
-				{ answerText: 'We all have scars, we gonna have more.'},
-				{ answerText: 'Did you know I made up, coined, and created the term McConaissance?'},
+				{ answerText: "'Don’t walk into a place like you wanna buy it, walk in like you own it.'"},
+				{ answerText: "'I’d rather lose money havin fun than make money being bored.'"},
+				{ answerText: "'We all have scars, we gonna have more.'"},
+				{ answerText: "'Did you know I made up, coined, and created the term McConaissance?'"},
 			],
 		},
 		{
 			questionText: 'What do you like to do when you\'re feeling blue?',
 			answerOptions: [
 				{ answerText: 'Eat a pint of ice cream and watch your favorite Ryan Gosling romcoms', activity: "Chill"},
-				{ answerText: 'Let my emotions fuel your workout', activity: "Workout"},
+				{ answerText: 'Let my emotions fuel my workout', activity: "Workout"},
 				{ answerText: 'Put on your best pair of sweats to impress the GrubHub guy', activity: "Party"},
 				{ answerText: 'Turn Adele up to 11', activity: "Pop"},
 			],
@@ -96,14 +96,13 @@ export function Quiz (props) {
 						<h2 className='question-text'>{questions[currentQuestion].questionText}</h2>
 					</div>
 					<div className='quiz-answers'>
-						{questions[currentQuestion].answerOptions.map((answerOption, idx) => (
+						{questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button 
 								onClick={() => handleAnswerOptionClick(answerOption.activity, answerOption.mood)}
 								className='quiz-answer'
-                key={idx}
 							>
 								<div className='quiz-answer-text'>
-									{answerOption.answerText}
+									{answerOption.answerText.replace('<br/>', '\n')}
 								</div>
 							</button>
 						))}

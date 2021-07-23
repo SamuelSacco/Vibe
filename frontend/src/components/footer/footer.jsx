@@ -16,7 +16,7 @@ export const Footer = () => {
                     </a>
                 </div>
                 <div className='member-links'>
-                    Sam Sacco
+                    Samuel Sacco
                     <a href='https://github.com/SamuelSacco' >
                         <i class="fab fa-github footer-logo"></i>
                     </a>
