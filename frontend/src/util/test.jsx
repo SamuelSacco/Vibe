@@ -5,7 +5,7 @@ export const Test = () => {
     const [widgetId, setWidgetId] = useState('')
 
     useEffect(() => {
-        getRandomPlaylist().then(response => {
+        getRandomPlaylist("Workout").then(response => {
             console.log(response); 
             setWidgetId(response)
         })

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getToken = getToken;
   window.getGenres = getGenres;
   window.getPlaylists = getPlaylists;
-  window.getRandomPlaylist = getRandomPlaylist();
+  window.getRandomPlaylist = getRandomPlaylist;
   //end testing
   
   ReactDOM.render(<Root store={store} />, root);

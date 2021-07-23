@@ -18,7 +18,7 @@ export const getToken = () => {
     return tokenPromise
 }
 
-// returns a promise of genre items?
+// returns a promise of an array of genre objects (need to isolate id)
 export async function getGenres(){
     const token = await getToken()
 
@@ -33,11 +33,15 @@ export async function getGenres(){
     return genres.data.categories.items
 }
 
+// returns an promise of an array of playlists objects (need to isolate name)
 export async function getPlaylists(mood){
-    const token = await getToken()
-    const genres = await getGenres()
-    const playlistName =  genres.filter(el => mood.includes(el.name))[0].id
+    const token = await getToken() // gets token
+    const genres = await getGenres() // gets a promise array of genre objects
     // debugger
+    const playlistName =  genres.filter(el => mood.includes(el.name))[0].id 
+    // .filter to reduce array to 1 object
+    // [0] to get first object in array
+    // .id to string interpolate instead of name
     const playlistPromise = axios(`https://api.spotify.com/v1/browse/categories/${playlistName}/playlists?limit=10`, {
         method: 'GET',
         headers: {
@@ -45,17 +49,12 @@ export async function getPlaylists(mood){
         }
     })
     
-    return playlistPromise
+    const playlists = await playlistPromise
+    return playlists.data.playlists.items
 }
 
 export async function getRandomPlaylist(mood){
-    const playlistPromise = await getPlaylists("Chill")
-    // debugger
-    const playlistArray = playlistPromise.data.playlists.items
+    const playlistArray = await getPlaylists(mood)
     const randomNumber = Math.floor(Math.random() * playlistArray.length)
-    // console.log(randomNumber)
-    return playlistPromise.data.playlists.items[randomNumber].id
-
-    // const playlistArray = await getPlaylists(mood)
-    // return playlistArray.data.playlists.items[0].id
+    return playlistArray[randomNumber].id
 }
