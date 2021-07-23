@@ -96,10 +96,11 @@ export function Quiz (props) {
 						<h2 className='question-text'>{questions[currentQuestion].questionText}</h2>
 					</div>
 					<div className='quiz-answers'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
+						{questions[currentQuestion].answerOptions.map((answerOption, idx) => (
 							<button 
 								onClick={() => handleAnswerOptionClick(answerOption.activity, answerOption.mood)}
 								className='quiz-answer'
+                key={idx}
 							>
 								<div className='quiz-answer-text'>
 									{answerOption.answerText}
