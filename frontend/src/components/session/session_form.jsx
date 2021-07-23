@@ -37,8 +37,7 @@ class SessionForm extends React.Component {
         // const user = Object.assign({}, this.state);
         this.props.processForm(this.state)
         this.setState(this.newState)
-        this.props.history.push(`/quiz`) // only do this on a successful login / sign up
-        
+        // this.props.history.push(`/quiz`) // only do this on a successful login / sign up
     }
 
     // renderErrors() {
