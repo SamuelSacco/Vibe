@@ -40,21 +40,23 @@ class SessionForm extends React.Component {
         // this.props.history.push(`/quiz`) // only do this on a successful login / sign up
     }
 
-    // renderErrors() {
-    //     return(
-    //       <ul>
-    //         {this.props.errors.map((error, i) => (
-    //           <li key={`error-${i}`}>
-    //             {error}
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     );
-    //   }
 
-    componentWillUnmount() {
-      
-    }
+    renderErrors() {
+      // debugger 
+        return(
+          <ul>
+            {this.props.errors.email}
+            <br/>
+            {this.props.errors.username}
+            <br/>
+            {this.props.errors.password}
+            <br/>
+            {this.props.errors.password2}
+            <br/>
+          </ul>
+        )
+        }
+
 
     changeButtonColor() {
       if (document.getElementById("changeColorEmail").value !== "" && document.getElementById("changeColorPassword").value !== '') {
@@ -122,8 +124,11 @@ class SessionForm extends React.Component {
                 </h2>
                 <br />
       
+                {this.renderErrors()}
                 {formType === 'Sign up' ? signupFields() : ''}
-                {/* {this.renderErrors()} */}
+                <div>
+                  {/* {this.props.errors.email} */}
+                </div>
                 <div className="form-input">
                     <input 
                       type="text" 
@@ -178,4 +183,3 @@ class SessionForm extends React.Component {
 
 export default SessionForm
 
-// don't make ali mad w css design choices or else
