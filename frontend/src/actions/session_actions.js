@@ -11,12 +11,12 @@ export const receiveCurrentUser = currentUser => ({
     currentUser
 });
 
-export const receiveUserSignIn = (user) => {
-  return ({
-    type: RECEIVE_USER_SIGN_IN,
-    user: { id: user.data._id }
-  })
-}
+// export const receiveUserSignIn = (user) => {
+//   return ({
+//     type: RECEIVE_USER_SIGN_IN,
+//     user
+//   })
+// }
   
 export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
@@ -33,7 +33,7 @@ export const logoutCurrentUser = () => ({
 export const signup = user => dispatch => {
   return (
     APIUtil.signup(user)
-      .then( user => (dispatch(receiveUserSignIn(user)))
+      .then( user => (dispatch(receiveCurrentUser({ id: user.data._id })))
         , err => (dispatch(receiveErrors(err.response.data)))
       )
   )
