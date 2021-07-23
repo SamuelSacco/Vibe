@@ -25,10 +25,10 @@ export function Quiz (props) {
 		{
 			questionText: 'Which song lyric do you resonate with most right now?',
 			answerOptions: [
-				{ answerText: "'I'm so lonely' Lonely - Justin Bieber ", mood: "Sad"},
-				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling - Black Eyed Peas", mood: "Happy"},
-				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song - Bruno Mars", mood: "Sad"},
-				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?'", mood: "Happy"},
+				{ answerText: "'I'm so lonely' \nLonely by Justin Bieber ", mood: "Sad"},
+				{ answerText: "'I got a feeling that tonight's gonna be a good night!' I Got a Feeling by Black Eyed Peas", mood: "Happy"},
+				{ answerText: "'I'll be lounging on the couch, just chilling in my Snuggie' The Lazy Song by Bruno Mars", mood: "Sad"},
+				{ answerText: "'It's Friday then, It's Saturday, Sunday, what?' Push the Feeling On by Nightcrawlers", mood: "Happy"},
 			],
 		},
 		{
