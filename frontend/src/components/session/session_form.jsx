@@ -118,7 +118,7 @@ class SessionForm extends React.Component {
                   <img 
                     src="https://cdn.discordapp.com/attachments/844198011239923724/867901223784939570/VIBE_LOGO-C.png" 
                     alt="vibelogo" 
-                    className='navbar-logo'
+                    className='session-logo'
                   />
                 </h2>
                 <br />
