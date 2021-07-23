@@ -33,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .playlist-wrapper{
@@ -40,6 +41,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 80%;
+
 }
 
 .playlist-show-widget {
@@ -52,7 +55,7 @@
 
 .playlist-func-button-wrapper{
     margin: 10px;
-    width: 100%;
+    width: 800px;
     display: flex;
     // justify-content: flex-start;
 }
