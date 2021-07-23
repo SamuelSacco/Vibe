@@ -43,7 +43,7 @@ function PlaylistGenerator(props) {
         </div>
       </div>
       : <div className='playlist-loading'>
-          <h1 className='playlist-loading-header'>(( It's a vibe ))</h1>
+          <h1 className='playlist-loading-header'>Fetching your vibe...</h1>
           <img 
             src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'
             className='vibe-gif'

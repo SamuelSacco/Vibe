@@ -11,9 +11,12 @@ export const receiveCurrentUser = currentUser => ({
     currentUser
 });
 
-export const receiveUserSignIn = () => ({
-    type: RECEIVE_USER_SIGN_IN
-});
+export const receiveUserSignIn = (user) => {
+  return ({
+    type: RECEIVE_USER_SIGN_IN,
+    user: { id: user.data._id }
+  })
+}
   
 export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
@@ -24,13 +27,17 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-export const signup = user => dispatch => (
-    APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
-    ), err => (
-        dispatch(receiveErrors(err.response.data))
-    ))
-);
+
+
+// thunk actions
+export const signup = user => dispatch => {
+  return (
+    APIUtil.signup(user)
+      .then( user => (dispatch(receiveUserSignIn(user)))
+        , err => (dispatch(receiveErrors(err.response.data)))
+      )
+  )
+};
 
 export const login = user => dispatch => (
     APIUtil.login(user).then(res => {
