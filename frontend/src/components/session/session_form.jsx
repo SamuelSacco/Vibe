@@ -1,11 +1,11 @@
 import React from 'react'
-import {
-  Route,
-  Redirect,
-  Switch,
-  Link,
-  HashRouter
-} from 'react-router-dom'; 
+// import {
+//   Route,
+//   Redirect,
+//   Switch,
+//   Link,
+//   HashRouter
+// } from 'react-router-dom'; 
 // import { login } from '../../actions/session_actions';
 
 
@@ -136,7 +136,7 @@ class SessionForm extends React.Component {
                       value={this.state.email} 
                       onChange={this.update('email')}
                       onFocus={(e) => e.target.placeholder = ""} 
-                      onBlur={(e) => e.target.placeholder = "Email"}
+                      onBlur={(e) => e.target.placeholder = this.state.email}
                       id='changeColorEmail'
                       onKeyUp={() => this.changeButtonColor()}
                     />
@@ -151,7 +151,7 @@ class SessionForm extends React.Component {
                       value={this.state.password} 
                       onChange={this.update('password')}
                       onFocus={(e) => e.target.placeholder = ""} 
-                      onBlur={(e) => e.target.placeholder = "Password"}
+                      onBlur={(e) => e.target.placeholder = this.state.password}
                       id='changeColorPassword'
                       onKeyUp={() => this.changeButtonColor()}
                     />
