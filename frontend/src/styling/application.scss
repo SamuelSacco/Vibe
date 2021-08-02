@@ -11,6 +11,7 @@ html, body, #root{
     -webkit-text-size-adjust: 100%; /* 2 */
     height: 100%;
     width: 100%;
+    display: flex;
   }
 
 .splash-wrapper{
@@ -23,7 +24,7 @@ html, body, #root{
   position: relative;
   flex-direction: column;
   background: linear-gradient(-45deg,  #19aee4, #C687E9, #f86c6c, #F9EC1F);
-	background-size: 200% 200%;
+	background-size: 150% 100%;
 	animation: gradient 8s ease infinite;
   font-family: Gilroy-Light;
 }
