@@ -12,7 +12,6 @@ import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
 import {Footer} from './footer/footer'
 
-
 const App = () => (
   
   <div className="splash-wrapper">
@@ -31,4 +30,3 @@ const App = () => (
 );
 
 export default App;
-
