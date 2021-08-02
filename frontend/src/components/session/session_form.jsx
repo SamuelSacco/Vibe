@@ -40,22 +40,22 @@ class SessionForm extends React.Component {
         // this.props.history.push(`/quiz`) // only do this on a successful login / sign up
     }
 
+    componentWillUnmount(){
+      this.props.removeErrors()
+    }
+
 
     renderErrors() {
-      // debugger 
-        return(
-          <ul>
-            {this.props.errors.email}
-            <br/>
-            {this.props.errors.username}
-            <br/>
-            {this.props.errors.password}
-            <br/>
-            {this.props.errors.password2}
-            <br/>
-          </ul>
-        )
-        }
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 
 
     changeButtonColor() {
