@@ -13,7 +13,7 @@ export const Footer = () => {
                     Raphael Talatala
                 </span>
                 <a href='https://github.com/rgltalatala' >
-                    <i class="fab fa-github footer-logo"></i>
+                    <i className="fab fa-github footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -21,7 +21,7 @@ export const Footer = () => {
                     Samuel Sacco
                 </span>
                 <a href='https://github.com/SamuelSacco' >
-                    <i class="fab fa-github footer-logo"></i>
+                    <i className="fab fa-github footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -29,7 +29,7 @@ export const Footer = () => {
                     Paul Kim
                 </span>
                 <a href='https://github.com/pauulkim' >
-                    <i class="fab fa-github footer-logo"></i>
+                    <i className="fab fa-github footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -37,7 +37,7 @@ export const Footer = () => {
                     Chase Van Haselen
                 </span>
                 <a href='https://github.com/cvhcvhcvh' >
-                    <i class="fab fa-github footer-logo"></i>
+                    <i className="fab fa-github footer-logo"></i>
                 </a>
             </div>
         </div>
