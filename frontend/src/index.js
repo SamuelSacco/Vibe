@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { getGenres, getPlaylists, getRandomPlaylist, getToken } from './util/spotify-api-util';
+import { getGenres, getPlaylists, getRandomFeaturedPlaylist, getRandomPlaylist, getToken } from './util/spotify-api-util';
 // import axios from "axios"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getGenres = getGenres;
   window.getPlaylists = getPlaylists;
   window.getRandomPlaylist = getRandomPlaylist;
+  window.getRandomFeaturedPlaylist = getRandomFeaturedPlaylist;
   //end testing
   
   ReactDOM.render(<Root store={store} />, root);
