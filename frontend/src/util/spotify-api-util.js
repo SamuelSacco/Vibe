@@ -37,7 +37,7 @@ export async function getRandomFeaturedPlaylist(){
 export async function getPlaylistBySearch(keyword){
     const token = await getToken() // gets token
 
-    const tokenPromise = await axios(`https://api.spotify.com/v1/search?q=${keyword}&type=playlist&market=US&limit=10&offset=5`, {
+    const tokenPromise = await axios(`https://api.spotify.com/v1/search?query=${keyword}&type=playlist&offset=0&limit=20`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + token.data.access_token
@@ -45,8 +45,7 @@ export async function getPlaylistBySearch(keyword){
     })
 
     const playlistArray = tokenPromise.data.playlists.items
-    const randomNumber = Math.floor(Math.random() * playlistArray.length)
-    return playlistArray[randomNumber]
+    return playlistArray[0]
 }
 
 
