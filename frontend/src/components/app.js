@@ -11,6 +11,9 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PlaylistGeneratorContainer from './playlist/playlist_generator_container';
 import {Footer} from './footer/footer'
+import FeaturedPlaylistContainer from './playlist/featured_playlist_container';
+import SearchPlaylistsContainer from './playlist/search_playlists_container';
+import SearchPlaylists from './playlist/search_playlists';
 
 const App = () => (
   
@@ -24,6 +27,8 @@ const App = () => (
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <Route exact path="/playlists" component={PlaylistGeneratorContainer}/>
           <ProtectedRoute exact path="/user/:userId" component={UserShowContainer}/>
+          <ProtectedRoute exact path="/random" component={FeaturedPlaylistContainer} />
+          <ProtectedRoute exact path="/search" component={SearchPlaylists} />
       </Switch>
       <Footer/>
     </div>

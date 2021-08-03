@@ -18,6 +18,37 @@ export const getToken = () => {
     return tokenPromise
 }
 
+
+export async function getRandomFeaturedPlaylist(){
+    const token = await getToken() // gets token
+
+    const tokenPromise = await axios('https://api.spotify.com/v1/browse/featured-playlists?country=US&limit=20', {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token.data.access_token
+        }
+    })
+
+    const playlistArray = tokenPromise.data.playlists.items
+    const randomNumber = Math.floor(Math.random() * playlistArray.length)
+    return playlistArray[randomNumber]
+}
+
+export async function getPlaylistBySearch(keyword){
+    const token = await getToken() // gets token
+
+    const tokenPromise = await axios(`https://api.spotify.com/v1/search?query=${keyword}&type=playlist&offset=0&limit=20`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token.data.access_token
+        }
+    })
+
+    const playlistArray = tokenPromise.data.playlists.items
+    return playlistArray[0]
+}
+
+
 // returns a promise of an array of genre objects (need to isolate id)
 export async function getGenres(){
     const token = await getToken()
