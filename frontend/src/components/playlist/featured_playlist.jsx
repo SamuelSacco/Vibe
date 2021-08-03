@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import SavePlaylist from './save_playlist';
-import { getRandomPlaylist } from '../../util/spotify-api-util'
+import { getRandomFeaturedPlaylist } from '../../util/spotify-api-util'
 
-function PlaylistGenerator(props) {
+function FeaturedPlaylist(props) {
 
-    const [widgetId, setWidgetId] = useState('')
+    const [widgetId, setWidgetId] = useState('');
+    const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => setLoading(false), 5000)
-        getRandomPlaylist(props.activity).then(response => {
-            console.log(response);
-            setWidgetId(response)
+        getRandomFeaturedPlaylist().then(response => {
+            setWidgetId(response.id)
+            setDescription(response.description)
         })
     }, [])
 
@@ -20,7 +21,7 @@ function PlaylistGenerator(props) {
             {
                 widgetId && loading === false ?
                     <div className='playlist-wrapper'>
-                        <h1 className='playlist-show-header'>Your vibe is...</h1>
+                        <h1 className='playlist-show-header'>{description}</h1>
                         <iframe
                             title="playlist-widget"
                             src={`https://open.spotify.com/embed/playlist/${widgetId}`}
@@ -42,17 +43,13 @@ function PlaylistGenerator(props) {
                             />
                         </div>
                     </div>
-                    : <div className='playlist-loading'>
+                : 
+                    <div className='playlist-loading'>
                         <h1 className='playlist-loading-header'>Fetching your vibe...</h1>
-                        <img
-                            src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'
-                            className='vibe-gif'
-                            alt="no_img"
-                        ></img>
                     </div>
             }
         </div>
     );
 }
 
-export default PlaylistGenerator;
+export default FeaturedPlaylist;

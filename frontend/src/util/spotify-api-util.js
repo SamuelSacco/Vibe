@@ -31,7 +31,22 @@ export async function getRandomFeaturedPlaylist(){
 
     const playlistArray = tokenPromise.data.playlists.items
     const randomNumber = Math.floor(Math.random() * playlistArray.length)
-    return playlistArray[randomNumber].id
+    return playlistArray[randomNumber]
+}
+
+export async function getPlaylistBySearch(keyword){
+    const token = await getToken() // gets token
+
+    const tokenPromise = await axios(`https://api.spotify.com/v1/search?q=${keyword}&type=playlist&market=US&limit=10&offset=5`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token.data.access_token
+        }
+    })
+
+    const playlistArray = tokenPromise.data.playlists.items
+    const randomNumber = Math.floor(Math.random() * playlistArray.length)
+    return playlistArray[randomNumber]
 }
 
 

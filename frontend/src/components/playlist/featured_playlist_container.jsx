@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createPlaylist } from '../../actions/playlist_actions';
-import PlaylistGenerator from './playlist_generator';
+import FeaturedPlaylist from './featured_playlist';
 
 const mSTP = (state, ownProps) => {
     return ({
@@ -16,4 +16,4 @@ const mDTP = (dispatch) => {
     })
 }
 
-export default connect(mSTP, mDTP)(PlaylistGenerator)
+export default connect(mSTP, mDTP)(FeaturedPlaylist)

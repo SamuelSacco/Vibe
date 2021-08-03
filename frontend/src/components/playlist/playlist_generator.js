@@ -47,6 +47,7 @@ function PlaylistGenerator(props) {
           <img 
             src='https://media.giphy.com/media/glvyCVWYJ21fq/source.gif'
             className='vibe-gif'
+            alt="no_img"
           ></img>
       </div>
       }

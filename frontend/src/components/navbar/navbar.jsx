@@ -23,6 +23,7 @@ const NavBar = ({ currentUser, logout }) => {
                   </a>
                   <div className="dropdown-content">
                     <Link to={`/user/${currentUser.id}`}>My Vibes</Link>
+                    <Link to={`/random`}>Get a random playlist!</Link>
                     <Link to={`/quiz`}>Take the quiz again!</Link>
                     <Link to="/" onClick={logout}>Log out</Link>
                   </div>
