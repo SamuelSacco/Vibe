@@ -32,7 +32,7 @@ export const Footer = () => {
                 <a href='https://www.linkedin.com/in/sam-sacco-642a59218/' >
                     <i class="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
-                <a href='https://angel.co/u/raphael-talatala' >
+                <a href='https://angel.co/u/samuel-sacco' >
                     <i class="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
@@ -46,7 +46,7 @@ export const Footer = () => {
                 <a href='https://www.linkedin.com/in/pauulkim/' >
                     <i class="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
-                <a href='https://angel.co/u/raphael-talatala' >
+                <a href='https://angel.co/u/paulkim36' >
                     <i class="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
@@ -60,7 +60,7 @@ export const Footer = () => {
                 <a href='https://www.linkedin.com/in/cvhcvh/' >
                     <i class="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
-                <a href='https://angel.co/u/raphael-talatala' >
+                <a href='https://angel.co/u/cvh' >
                     <i class="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
