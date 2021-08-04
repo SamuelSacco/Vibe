@@ -9,7 +9,7 @@ const mSTP = ({ errors }) => ({
         email: '',
         password: ''
     },
-    errors: Object.values(errors.session),
+    errors: errors.session,
     formType: 'Log in',
     navLink: <Link to="/signup" className="signin-text">Sign up instead</Link>,
 })

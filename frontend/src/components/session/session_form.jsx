@@ -45,17 +45,11 @@ class SessionForm extends React.Component {
     }
 
 
-    renderErrors() {
-      return(
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+    // renderErrors() {
+    //   return(
+    //     this.props.errors
+    //   );
+    // }
 
 
     changeButtonColor() {
@@ -78,6 +72,7 @@ class SessionForm extends React.Component {
       const signupFields = () => {
         return(
           <>
+            {this.props.errors.username}
             <div className="inputGroup">
               <input 
                 type="text" 
@@ -96,6 +91,7 @@ class SessionForm extends React.Component {
       const signupPassword = () => {
         return(
           <>
+            {this.props.errors.password2}
             <div className="inputGroup">
               <input 
                 type="password" 
@@ -111,6 +107,16 @@ class SessionForm extends React.Component {
         )
       }
 
+      const passwordErrors = () => (
+        <>
+          <div>
+            {this.props.errors.password}
+          </div>
+          <div>
+            {this.props.errors.password2}
+          </div>
+        </>
+      )
 
       return(
           <div className="splash-container">
@@ -124,11 +130,10 @@ class SessionForm extends React.Component {
                 </h2>
                 <br />
       
-                {this.renderErrors()}
+                
                 {formType === 'Sign up' ? signupFields() : ''}
-                <div>
-                  {/* {this.props.errors.email} */}
-                </div>
+                
+                {this.props.errors.email}
                 <div className="form-input">
                     <input 
                       type="text" 
@@ -143,7 +148,7 @@ class SessionForm extends React.Component {
                 </div>
                 <br/>
 
-
+                {passwordErrors()}
                 <div className="form-input">
                     <input 
                       type="password" 
@@ -174,7 +179,7 @@ class SessionForm extends React.Component {
                     : ''
                   }
                 
-                Already a user? {this.props.navLink}
+                {formType === 'Sign up' ? <div>Already a user? {this.props.navLink}</div> : this.props.navLink}  
               </form>
           </div>
       )
