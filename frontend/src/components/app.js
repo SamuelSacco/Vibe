@@ -14,6 +14,7 @@ import {Footer} from './footer/footer'
 import FeaturedPlaylistContainer from './playlist/featured_playlist_container';
 import SearchPlaylistsContainer from './playlist/search_playlists_container';
 import SearchPlaylists from './playlist/search_playlists';
+import SearchItemsContainer from './playlist/search_items_container';
 
 const App = () => (
   
@@ -29,6 +30,8 @@ const App = () => (
           <ProtectedRoute exact path="/user/:userId" component={UserShowContainer}/>
           <ProtectedRoute exact path="/random" component={FeaturedPlaylistContainer} />
           <ProtectedRoute exact path="/search" component={SearchPlaylists} />
+          <ProtectedRoute exact path="/multiple" component={SearchItemsContainer} />
+
       </Switch>
       <Footer/>
     </div>

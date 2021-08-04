@@ -50,6 +50,20 @@ export async function getPlaylistBySearch(keyword){
     return playlistArray[0]
 }
 
+export async function getMultiplePlaylistsBySearch(keyword) {
+    const token = await getToken() // gets token
+
+    const tokenPromise = await axios(`https://api.spotify.com/v1/search?query=${keyword}&type=playlist&offset=0&limit=20`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token.data.access_token
+        }
+    })
+
+    const playlistArray = tokenPromise.data.playlists.items
+    return playlistArray
+}
+
 // returns a promise of an array of genre objects (need to isolate id)
 export async function getGenres(){
     const token = await getToken()

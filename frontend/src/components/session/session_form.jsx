@@ -8,7 +8,6 @@ import React from 'react'
 // } from 'react-router-dom'; 
 // import { login } from '../../actions/session_actions';
 
-
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +43,6 @@ class SessionForm extends React.Component {
       this.props.removeErrors()
     }
 
-
     renderErrors() {
       return(
         <ul>
@@ -56,7 +54,6 @@ class SessionForm extends React.Component {
         </ul>
       );
     }
-
 
     changeButtonColor() {
       if (document.getElementById("changeColorEmail").value !== "" && document.getElementById("changeColorPassword").value !== '') {
@@ -72,8 +69,7 @@ class SessionForm extends React.Component {
       const demoUser = {
         email: "demo@user.com",
         password: "123456"
-      }
-      
+      }    
       
       const signupFields = () => {
         return(
@@ -111,7 +107,6 @@ class SessionForm extends React.Component {
         )
       }
 
-
       return(
           <div className="splash-container">
               <form onSubmit={this.handleSubmit} className="session-form">
@@ -142,7 +137,6 @@ class SessionForm extends React.Component {
                     />
                 </div>
                 <br/>
-
 
                 <div className="form-input">
                     <input 
