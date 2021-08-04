@@ -1,9 +1,12 @@
-import axios from 'axios'
+import axios from 'axios';
+import keys from '../keys_config/keys';
+const clientId = keys.clientId
+const secretId = keys.secretId
 
-const clientId = '79eb0fab585d4f86bcfba8abde304372'
-const secretId = 'b704db72f82c45cd83aff68ad527d664'
+// const clientId = '79eb0fab585d4f86bcfba8abde304372';
+// const secretId = 'b704db72f82c45cd83aff68ad527d664';
+// return a token promise => 2389750987230958523lkjgsdlkjgds;
 
-// return a token promise => 2389750987230958523lkjgsdlkjgds
 export const getToken = () => {
     const tokenPromise = axios('https://accounts.spotify.com/api/token', {
         method: 'POST',
@@ -17,7 +20,6 @@ export const getToken = () => {
 
     return tokenPromise
 }
-
 
 export async function getRandomFeaturedPlaylist(){
     const token = await getToken() // gets token
@@ -47,7 +49,6 @@ export async function getPlaylistBySearch(keyword){
     const playlistArray = tokenPromise.data.playlists.items
     return playlistArray[0]
 }
-
 
 // returns a promise of an array of genre objects (need to isolate id)
 export async function getGenres(){

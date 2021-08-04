@@ -26,11 +26,17 @@ function SearchPlaylists(props) {
                     <div className='playlist-wrapper'>
                         {/* <h1 className='playlist-show-header'>Your vibe is...</h1> */}
                         <div>
-                            <input 
-                            type="text" 
-                            value={keyword}
-                            onChange={handleChange}
-                            />
+                            <label htmlFor="">
+                                <input 
+                                type="text" 
+                                value={keyword}
+                                onChange={handleChange}
+                                placeholder="Type to search Spotify's playlists!"
+                                onFocus={(e) => e.target.placeholder = ""}
+                                onBlur={(e) => e.target.placeholder = "Type to search Spotify's playlists!"}
+                                />
+                                {/* <button>Submit</button> */}
+                            </label>
                         </div>
                         <br />
                         <iframe
