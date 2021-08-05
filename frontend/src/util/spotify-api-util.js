@@ -8,6 +8,7 @@ const secretId = keys.secretId
 // return a token promise => 2389750987230958523lkjgsdlkjgds;
 
 export const getToken = () => {
+    console.log(clientId, secretId)
     const tokenPromise = axios('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
