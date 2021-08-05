@@ -1,4 +1,4 @@
 module.exports = {
-    secretId: process.env.SECRET_ID,
-    clientId: process.env.CLIENT_ID
+    secretId: process.env.REACT_APP_SECRET_ID,
+    clientId: process.env.REACT_APP_CLIENT_ID
 }

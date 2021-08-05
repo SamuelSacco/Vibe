@@ -1,5 +1,9 @@
 import axios from 'axios';
-import {clientId, secretId} from '../keys_config/keys';
+// import {clientId, secretId} from '../keys_config/keys';
+
+const clientId = '79eb0fab585d4f86bcfba8abde304372'
+const secretId = 'fd7e291608244c39baf50cbdc44ab561'
+
 
 // const clientId = '79eb0fab585d4f86bcfba8abde304372';
 // const secretId = 'b704db72f82c45cd83aff68ad527d664';
@@ -8,7 +12,8 @@ import {clientId, secretId} from '../keys_config/keys';
 export const getToken = () => {
     console.log(clientId, secretId)
     console.log(process.env)
-    console.log(process.env.CLIENT_ID)
+    console.log(process.env.REACT_APP_CLIENT_ID)
+    console.log(process.env.REACT_APP_SECRET_ID)
 
     const tokenPromise = axios('https://accounts.spotify.com/api/token', {
         method: 'POST',
