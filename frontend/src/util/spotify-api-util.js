@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import {clientId, secretId} from '../keys_config/keys';
+import {clientId, secretId} from '../keys_config/keys';
 
 // const clientId = '79eb0fab585d4f86bcfba8abde304372';
 // const secretId = 'b704db72f82c45cd83aff68ad527d664';
