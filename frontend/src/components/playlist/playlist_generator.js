@@ -3,14 +3,15 @@ import SavePlaylist from './save_playlist';
 import { getRandomPlaylist } from '../../util/spotify-api-util'
 
 function PlaylistGenerator(props) {
-
-  const [widgetId, setWidgetId] = useState('')
+  // console.log("PROPS", props.activity)
+  const [widgetId, setWidgetId] = useState('');
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
+
     setTimeout(() => setLoading(false), 5000)
+
     getRandomPlaylist(props.activity).then(response => {
-      console.log(response);
       setWidgetId(response)
     })
   }, [])
