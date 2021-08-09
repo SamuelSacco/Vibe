@@ -6,10 +6,15 @@ import {clientId, secretId} from '../keys_config/keys';
 // return a token promise => 2389750987230958523lkjgsdlkjgds;
 
 export const getToken = () => {
+<<<<<<< HEAD
     // console.log(clientId, secretId)
     // console.log(process.env)
     // console.log(process.env.REACT_APP_CLIENT_ID)
     // console.log(process.env.REACT_APP_SECRET_ID)
+=======
+    console.log(clientId)
+    console.log(secretId)
+>>>>>>> widgets
 
     const tokenPromise = axios('https://accounts.spotify.com/api/token', {
         method: 'POST',
@@ -53,6 +58,20 @@ export async function getPlaylistBySearch(keyword){
     return playlistArray[0]
 }
 
+export async function getMultiplePlaylistsBySearch(keyword) {
+    const token = await getToken() // gets token
+
+    const tokenPromise = await axios(`https://api.spotify.com/v1/search?query=${keyword}&type=playlist&offset=0&limit=20`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token.data.access_token
+        }
+    })
+
+    const playlistArray = tokenPromise.data.playlists.items
+    return playlistArray
+}
+
 // returns a promise of an array of genre objects (need to isolate id)
 export async function getGenres(){
     const token = await getToken()
@@ -73,6 +92,7 @@ export async function getPlaylists(mood){
     const token = await getToken() // gets token
     const genres = await getGenres() // gets a promise array of genre objects
     // debugger
+    console.log("INSIDE UTIL",mood)
     const playlistName = genres.filter(el => mood.includes(el.name))[0].id 
     // .filter to reduce array to 1 object
     // [0] to get first object in array

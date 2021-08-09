@@ -8,7 +8,6 @@ import React from 'react'
 // } from 'react-router-dom'; 
 // import { login } from '../../actions/session_actions';
 
-
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -51,7 +50,6 @@ class SessionForm extends React.Component {
     //   );
     // }
 
-
     changeButtonColor() {
       if (document.getElementById("changeColorEmail").value !== "" && document.getElementById("changeColorPassword").value !== '') {
         document.getElementById("button").style.background = "skyblue";
@@ -66,8 +64,7 @@ class SessionForm extends React.Component {
       const demoUser = {
         email: "demo@user.com",
         password: "123456"
-      }
-      
+      }    
       
       const signupFields = () => {
         return(
