@@ -6,15 +6,8 @@ import {clientId, secretId} from '../keys_config/keys';
 // return a token promise => 2389750987230958523lkjgsdlkjgds;
 
 export const getToken = () => {
-<<<<<<< HEAD
-    // console.log(clientId, secretId)
-    // console.log(process.env)
-    // console.log(process.env.REACT_APP_CLIENT_ID)
-    // console.log(process.env.REACT_APP_SECRET_ID)
-=======
-    console.log(clientId)
-    console.log(secretId)
->>>>>>> widgets
+    // console.log(clientId)
+    // console.log(secretId)
 
     const tokenPromise = axios('https://accounts.spotify.com/api/token', {
         method: 'POST',
@@ -91,8 +84,7 @@ export async function getGenres(){
 export async function getPlaylists(mood){
     const token = await getToken() // gets token
     const genres = await getGenres() // gets a promise array of genre objects
-    // debugger
-    console.log("INSIDE UTIL",mood)
+    // console.log("INSIDE UTIL",mood)
     const playlistName = genres.filter(el => mood.includes(el.name))[0].id 
     // .filter to reduce array to 1 object
     // [0] to get first object in array

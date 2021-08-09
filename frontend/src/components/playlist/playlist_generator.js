@@ -8,10 +8,13 @@ function PlaylistGenerator(props) {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
+    if (props.activity){
+      localStorage.setItem("activity", props.activity)
+    }
 
     setTimeout(() => setLoading(false), 5000)
 
-    getRandomPlaylist(props.activity).then(response => {
+    getRandomPlaylist(localStorage.activity).then(response => {
       setWidgetId(response)
     })
   }, [])
