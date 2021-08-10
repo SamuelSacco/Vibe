@@ -23,7 +23,7 @@ html, body, #app, #root {
   
   body {
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* min-width: 750px; */
   }
   

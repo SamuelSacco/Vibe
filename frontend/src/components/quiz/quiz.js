@@ -76,7 +76,7 @@ export function Quiz (props) {
 
 			props.submitQuiz(vibe)
 			props.history.push(`/playlists`)
-		 }
+		}
 		
 	};
 
