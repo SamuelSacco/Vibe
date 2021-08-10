@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         // const user = Object.assign({}, this.state);
         this.props.processForm(this.state)
-        this.setState(this.newState)
+        // this.setState(this.newState)
         // this.props.history.push(`/quiz`) // only do this on a successful login / sign up
     }
 
@@ -74,10 +74,10 @@ class SessionForm extends React.Component {
               <input 
                 type="text" 
                 placeholder="Username"
-                value={this.state.username }
+                value={this.state.username}
                 onChange={this.update('username')}
-                onFocus={(e) => e.target.placeholder = ""} 
-                onBlur={(e) => e.target.placeholder = "Username"}
+                onFocus={(e) => e.target.placeholder = this.state.username} 
+                onBlur={(e) => e.target.placeholder = this.state.username}
                 />
             </div>
             <br/>
@@ -93,10 +93,10 @@ class SessionForm extends React.Component {
               <input 
                 type="password" 
                 placeholder="Confirm password"
-                value={this.state.password2 }
+                value={this.state.password2}
                 onChange={this.update('password2')}
-                onFocus={(e) => e.target.placeholder = ""} 
-                onBlur={(e) => e.target.placeholder = "Confirm password"}
+                onFocus={(e) => e.target.placeholder = this.state.password2} 
+                onBlur={(e) => e.target.placeholder = this.state.password2}
                 />
             </div>
             <br/>
@@ -137,7 +137,7 @@ class SessionForm extends React.Component {
                       placeholder="Email"
                       value={this.state.email} 
                       onChange={this.update('email')}
-                      onFocus={(e) => e.target.placeholder = ""} 
+                      onFocus={(e) => e.target.placeholder = this.state.email} 
                       onBlur={(e) => e.target.placeholder = this.state.email}
                       id='changeColorEmail'
                       onKeyUp={() => this.changeButtonColor()}
@@ -152,7 +152,7 @@ class SessionForm extends React.Component {
                       placeholder="Password"
                       value={this.state.password} 
                       onChange={this.update('password')}
-                      onFocus={(e) => e.target.placeholder = ""} 
+                      onFocus={(e) => e.target.placeholder = this.state.password} 
                       onBlur={(e) => e.target.placeholder = this.state.password}
                       id='changeColorPassword'
                       onKeyUp={() => this.changeButtonColor()}
