@@ -52,6 +52,7 @@
   .quiz-answer{
     // background-color: white;
     background: rgba(240, 240, 240, 0.52);
+    position: relative;
     color: black;
     border-radius: 5px;
     width: 300px;
@@ -79,11 +80,50 @@
     width: 85%;
   }
 
-  // @media only screen and (max-height: 930px) {
-  //   .quiz-wrapper {
-  //     height: 100%;
+  @media only screen and (max-height: 830px) {
+    .quiz-wrapper {
+      height: 100%;
+    }
+    .question-section{
+      height: 15%;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      width: auto;
+    }
+    .quiz{
+      height: 85%;
+      margin: 0;
+      display: block;
+    }
+
+    .quiz-answers{
+      height: 30%;
+    }
+
+    .quiz-answer{
+      // height: 100%;
+      margin: 5px 20px;
+    }
+
+    
+
+    .quiz-answer-text{
+      font-size: 3vh;
+    }
+  }
+
+  @media screen and (max-height: 800px) {
+    .quiz{
+      height: 100%;
+    }
+
+    .quiz-answer{
+      height: 100%;
+    }
+  }
+
+  // @media screen and (max-height: 540px){
+  //   .question-text{
+  //     font-size: 6vh;
   //   }
-  //   // .quiz {
-  //   //   height: 85%;
-  //   // }
   // }
