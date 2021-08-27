@@ -25,8 +25,8 @@ MongoDB and Express allows our users to save the playlists the receive as a resu
 ![image](https://user-images.githubusercontent.com/63977819/131043384-66efa3d8-462c-4f82-a515-027f2dd84345.png)
 
 ## React/Redux and Spotify API
-  The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that every time we make a spotify request we have to request a new token to take with us, because Spotify tokens do not last more than 30 minutes. 
-
+  The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that ANY time we make a spotify request we HAVE to start by making a request for a token.
+  
 ![image](https://user-images.githubusercontent.com/76980320/131161517-a287f301-3cca-4423-a24e-a24a4893c91e.png)
 
 
