@@ -1,4 +1,5 @@
 # vibe
+Playlists made simple
 
 ![image](https://user-images.githubusercontent.com/63977819/131040542-c9e43ae2-b16d-4b26-a418-b97756d76a7e.png)
 
@@ -9,12 +10,14 @@ vibe is a web application that allows users to take a quiz that determines their
 ![sign in](https://user-images.githubusercontent.com/63977819/131042366-333c9abf-85c0-4046-b866-472ad41fd358.gif)
 
 # Technologies Stack
-* MongoDB
-* Express
+* MongoDB/ Express
+  MongoDB was our database of choice for our backend. It stores all information associated with a user. Once a user is authenticaed and logs in, they can save playllsts they've liked to the backend.
 * React/Redux
-
 * Node.js
 * Spotify API
+  The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that every time we make a spotify request we have to request a new token to take with us, because Spotify tokens do not last more than 30 minutes. 
+![Screen Shot 2021-08-27 at 12 45 09 PM](https://user-images.githubusercontent.com/76980320/131161228-4d55787e-2ec5-4858-8e9d-432213c682e9.png)
+
 
 # Technologies and Challenges
 
