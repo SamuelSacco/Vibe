@@ -10,14 +10,11 @@ vibe is a web application that allows users to take a quiz that determines their
 ![sign in](https://user-images.githubusercontent.com/63977819/131042366-333c9abf-85c0-4046-b866-472ad41fd358.gif)
 
 # Technologies Stack
-* MongoDB/ Express
-  MongoDB was our database of choice for our backend. It stores all information associated with a user. Once a user is authenticaed and logs in, they can save playllsts they've liked to the backend.
+* MongoDB
+* Express
 * React/Redux
 * Node.js
 * Spotify API
-  The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that every time we make a spotify request we have to request a new token to take with us, because Spotify tokens do not last more than 30 minutes. 
-![image](https://user-images.githubusercontent.com/76980320/131161441-0886bbfd-4fd0-46bb-b41b-fdab63210153.png)
-
 
 # Technologies and Challenges
 
@@ -28,6 +25,10 @@ MongoDB and Express allows our users to save the playlists the receive as a resu
 ![image](https://user-images.githubusercontent.com/63977819/131043384-66efa3d8-462c-4f82-a515-027f2dd84345.png)
 
 ## React/Redux and Spotify API
+  The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that every time we make a spotify request we have to request a new token to take with us, because Spotify tokens do not last more than 30 minutes. 
+
+![image](https://user-images.githubusercontent.com/76980320/131161517-a287f301-3cca-4423-a24e-a24a4893c91e.png)
+
 
 With the user's answers from the quiz about their current mood and hobbies, the responses are then sent to the Spotify API to find a playlist that will best match their current 'vibe'.  
 
