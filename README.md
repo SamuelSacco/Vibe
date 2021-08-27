@@ -16,7 +16,7 @@ vibe is a web application that allows users to take a quiz that determines their
 * Node.js
 * Spotify API
   The Spotify API presented an interesting challenge. Users can use the spotify app via the OAuth process where they log in with their own spotify credentials, and are in return given an access token that does not expire. For us we wanted people to be able to interact with our application even if they did NOT have a spotify account. This means that every time we make a spotify request we have to request a new token to take with us, because Spotify tokens do not last more than 30 minutes. 
-![Screen Shot 2021-08-27 at 12 45 09 PM](https://user-images.githubusercontent.com/76980320/131161228-4d55787e-2ec5-4858-8e9d-432213c682e9.png)
+![image](https://user-images.githubusercontent.com/76980320/131161441-0886bbfd-4fd0-46bb-b41b-fdab63210153.png)
 
 
 # Technologies and Challenges
