@@ -39,6 +39,7 @@ function UserShow(props){
             null
           } */}
       </ul>
+      <div>*Volume may be high, so please lower your volume before playing any songs*</div>
     </>
     )
 }
