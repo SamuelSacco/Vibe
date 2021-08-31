@@ -16,10 +16,10 @@ export const Footer = () => {
                     <i className="fab fa-github footer-logo"></i>
                 </a>
                 <a href='https://www.linkedin.com/in/raphael-talatala-703943129/' >
-                    <i class="fab fa-linkedin footer-logo  fa-5x"></i>
+                    <i className="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
                 <a href='https://angel.co/u/raphael-talatala' >
-                    <i class="fab fa-angellist footer-logo"></i>
+                    <i className="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -30,10 +30,10 @@ export const Footer = () => {
                     <i className="fab fa-github footer-logo"></i>
                 </a>
                 <a href='https://www.linkedin.com/in/sam-sacco-642a59218/' >
-                    <i class="fab fa-linkedin footer-logo  fa-5x"></i>
+                    <i className="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
                 <a href='https://angel.co/u/samuel-sacco' >
-                    <i class="fab fa-angellist footer-logo"></i>
+                    <i className="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -44,10 +44,10 @@ export const Footer = () => {
                     <i className="fab fa-github footer-logo"></i>
                 </a>
                 <a href='https://www.linkedin.com/in/pauulkim/' >
-                    <i class="fab fa-linkedin footer-logo  fa-5x"></i>
+                    <i className="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
                 <a href='https://angel.co/u/paulkim36' >
-                    <i class="fab fa-angellist footer-logo"></i>
+                    <i className="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
             <div className='member-links'>
@@ -58,10 +58,10 @@ export const Footer = () => {
                     <i className="fab fa-github footer-logo"></i>
                 </a>
                 <a href='https://www.linkedin.com/in/cvhcvh/' >
-                    <i class="fab fa-linkedin footer-logo  fa-5x"></i>
+                    <i className="fab fa-linkedin footer-logo  fa-5x"></i>
                 </a>
                 <a href='https://angel.co/u/cvh' >
-                    <i class="fab fa-angellist footer-logo"></i>
+                    <i className="fab fa-angellist footer-logo"></i>
                 </a>
             </div>
         </div>
