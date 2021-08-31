@@ -21,7 +21,7 @@ const SavePlaylist = (props) => {
       props.ownProps.history.push(`/user/${props.currentUserId}`)
     }
 
-    console.log("PROPS", props, "PLAYLIST", playlist)
+    // console.log("PROPS", props, "PLAYLIST", playlist)
     return (
         <div>
             <button onClick={handleSubmit} className='playlist-func-button'>Save Playlist</button>

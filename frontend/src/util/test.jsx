@@ -6,7 +6,7 @@ export const Test = () => {
 
     useEffect(() => {
         getRandomPlaylist("Workout").then(response => {
-            console.log(response); 
+            // console.log(response); 
             setWidgetId(response)
         })
     }, [])

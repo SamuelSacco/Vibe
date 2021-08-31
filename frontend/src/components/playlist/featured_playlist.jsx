@@ -16,6 +16,9 @@ function FeaturedPlaylist(props) {
         })
     }, [])
 
+    let playlist = document.getElementById('playlist')
+    playlist.volume = 0.1
+
     return (
         <div className="mood-playlist">
             {
@@ -31,6 +34,7 @@ function FeaturedPlaylist(props) {
                             allowtransparency="true"
                             allow="encrypted-media"
                             className='playlist-show-widget'
+                            id="playlist"
                         ></iframe>
                         <div className='playlist-func-button-wrapper'>
                             <SavePlaylist
