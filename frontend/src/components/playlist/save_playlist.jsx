@@ -16,7 +16,7 @@ const SavePlaylist = (props) => {
         widget: `https://open.spotify.com/embed/playlist/${props.widgetId}`
     }
 
-    function handleSubmit() {
+    function handleSubmit() {           
       props.createPlaylist(playlist)
       props.ownProps.history.push(`/user/${props.currentUserId}`)
     }
