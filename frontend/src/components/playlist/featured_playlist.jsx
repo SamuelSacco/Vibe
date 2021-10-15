@@ -16,8 +16,8 @@ function FeaturedPlaylist(props) {
         })
     }, [])
 
-    let playlist = document.getElementById('playlist')
-    playlist.volume = 0.1
+    // let playlist = document.getElementById('playlist')
+    // playlist.volume = 0.1
 
     return (
         <div className="mood-playlist">
